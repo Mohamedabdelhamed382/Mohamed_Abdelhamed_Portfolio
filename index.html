@@ -105,6 +105,8 @@ section{padding:108px 52px}
 .info-card ul{list-style:none}
 .info-card li{padding-left:14px;position:relative;margin-bottom:4px}
 .info-card li::before{content:'›';position:absolute;left:0;color:var(--blue);font-weight:700}
+.info-card a{color:inherit;text-decoration:none;transition:color .2s}
+.info-card a:hover{color:var(--blue)}
 
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
 .skill-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-xl);padding:28px;box-shadow:var(--shadow-sm);transition:all .3s;position:relative;overflow:hidden}
@@ -119,6 +121,7 @@ section{padding:108px 52px}
 #projects{background:var(--bg-2)}
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
 .proj-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-sm);transition:all .35s;display:flex;flex-direction:column}
+.proj-card[data-app]{cursor:pointer}
 .proj-card:hover{border-color:rgba(27,108,242,.2);box-shadow:var(--shadow-lg);transform:translateY(-4px)}
 .proj-top{padding:24px 24px 0;display:flex;align-items:flex-start;justify-content:space-between}
 .proj-icon{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
@@ -417,8 +420,10 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
 .app-modal-head-left{display:flex;align-items:center;gap:14px}
 .app-modal-head-icon{
   width:52px;height:52px;border-radius:14px;overflow:hidden;
-  flex-shrink:0;box-shadow:var(--shadow-sm);
+  flex-shrink:0;box-shadow:var(--shadow-sm);cursor:pointer;
+  transition:transform .2s,box-shadow .2s;
 }
+.app-modal-head-icon:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(27,108,242,.2)}
 .app-modal-head-icon img{width:100%;height:100%;object-fit:cover}
 .app-modal-head-title{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:1px}
 .app-modal-head-sub{font-size:.72rem;color:var(--blue);font-weight:600;letter-spacing:.06em}
@@ -453,8 +458,14 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
 .app-modal-body .story-features li{display:flex;align-items:flex-start;gap:9px;font-size:.84rem;color:var(--text-2);line-height:1.6}
 .app-modal-body .story-features li::before{content:"✓";color:var(--blue);font-weight:700;flex-shrink:0}
 .app-modal-body .story-links{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
-.app-modal-body .ss-scroll-wrap{margin-top:20px}
-.app-modal-body .ss-scroll img{height:380px}
+.app-modal-body .ss-scroll-wrap{margin-top:20px;position:relative}
+.app-modal-body .ss-scroll-wrap::after{
+  content:'Tap any screenshot to view full size';
+  display:block;margin-top:10px;font-size:.68rem;color:var(--text-3);
+  font-family:var(--mono);letter-spacing:.04em;text-align:center;
+}
+.app-modal-body .ss-scroll img{height:380px;transition:transform .2s,box-shadow .2s}
+.app-modal-body .ss-scroll img:hover{transform:scale(1.03);box-shadow:0 8px 32px rgba(27,108,242,.18)}
 .app-modal-body .ss-fade-right{background:linear-gradient(to left,var(--bg) 0%,transparent 100%)}
 .app-modal-body .fade-up{opacity:1 !important;transform:none !important}
 .app-modal-desc{font-size:.9rem;color:var(--text-2);line-height:1.9;margin-bottom:12px}
@@ -479,60 +490,69 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
 
 /* ── LIGHTBOX ── */
 .lightbox{
-  position:fixed;inset:0;z-index:2000;
-  background:rgba(0,0,0,0);
-  display:flex;align-items:center;justify-content:center;
-  pointer-events:none;
-  transition:background .3s;
+  position:fixed;inset:0;z-index:5000;
+  background:rgba(0,0,0,.94);
+  display:flex;flex-direction:column;
+  visibility:hidden;opacity:0;pointer-events:none;
+  transition:opacity .22s ease,visibility .22s ease;
 }
 .lightbox.open{
-  background:rgba(0,0,0,.92);
-  pointer-events:all;
+  visibility:visible;opacity:1;pointer-events:auto;
 }
-.lightbox-img-wrap{
-  position:relative;
-  max-width:90vw;max-height:90vh;
-  transform:scale(.85);opacity:0;
-  transition:transform .35s cubic-bezier(.32,1,.2,1),opacity .3s;
+.lightbox-toolbar{
+  flex-shrink:0;display:flex;align-items:center;justify-content:space-between;
+  padding:14px 18px;color:rgba(255,255,255,.75);
+  font-family:var(--mono);font-size:.72rem;
 }
-.lightbox.open .lightbox-img-wrap{transform:scale(1);opacity:1}
-.lightbox-img-wrap img{
-  max-width:90vw;max-height:88vh;
-  object-fit:contain;border-radius:16px;
-  display:block;box-shadow:0 24px 80px rgba(0,0,0,.6);
-}
-.lightbox-close{
-  position:absolute;top:-44px;right:0;
-  width:36px;height:36px;border-radius:50%;
-  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);
+.lightbox-close-btn{
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
   display:flex;align-items:center;justify-content:center;
-  cursor:pointer;color:#fff;font-size:1rem;
+  cursor:pointer;color:#fff;font-size:1.1rem;
   transition:background .2s;
 }
-.lightbox-close:hover{background:rgba(255,255,255,.3)}
+.lightbox-close-btn:hover{background:rgba(255,255,255,.25)}
+.lightbox-stage{
+  flex:1;min-height:0;position:relative;
+  display:flex;align-items:stretch;justify-content:center;
+  padding:0 12px 12px;gap:8px;
+}
+.lightbox-scroll{
+  flex:1;min-width:0;overflow:auto;
+  display:flex;align-items:flex-start;justify-content:center;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.35) transparent;
+}
+.lightbox-scroll::-webkit-scrollbar{width:6px;height:6px}
+.lightbox-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.35);border-radius:3px}
+.lightbox-scroll img{
+  display:block;width:auto;height:auto;
+  max-width:min(90vw,420px);
+  max-height:calc(100dvh - 150px);
+  object-fit:contain;
+  border-radius:12px;
+  box-shadow:0 24px 80px rgba(0,0,0,.55);
+  cursor:default;user-select:none;-webkit-user-drag:none;
+}
 .lightbox-nav{
-  position:absolute;top:50%;transform:translateY(-50%);
+  flex-shrink:0;align-self:center;
   width:44px;height:44px;border-radius:50%;
-  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
   display:flex;align-items:center;justify-content:center;
-  cursor:pointer;color:#fff;font-size:1.4rem;
+  cursor:pointer;color:#fff;font-size:1.5rem;
   transition:background .2s;
 }
-.lightbox-nav:hover{background:rgba(255,255,255,.3)}
-.lightbox-prev{left:-56px}
-.lightbox-next{right:-56px}
-.lightbox-counter{
-  position:absolute;bottom:-36px;left:50%;transform:translateX(-50%);
-  color:rgba(255,255,255,.6);font-family:var(--mono);font-size:.72rem;
-  white-space:nowrap;
+.lightbox-nav:hover{background:rgba(255,255,255,.25)}
+.lightbox-nav:disabled{opacity:.25;cursor:not-allowed}
+.lightbox-hint{
+  flex-shrink:0;text-align:center;padding:0 16px 14px;
+  color:rgba(255,255,255,.45);font-size:.65rem;font-family:var(--mono);
 }
-/* Make ss-scroll images clickable */
 .ss-scroll img{cursor:zoom-in}
-/* Also modal images */
-.app-modal-body .ss-scroll img{cursor:zoom-in}
 @media(max-width:700px){
-  .lightbox-prev{left:-46px}.lightbox-next{right:-46px}
-  .lightbox-nav{width:36px;height:36px;font-size:1.1rem}
+  .lightbox-stage{padding:0 6px 8px}
+  .lightbox-nav{width:38px;height:38px;font-size:1.2rem}
+  .app-modal-body .ss-scroll-wrap::after{content:'Tap to view full size · Swipe to browse'}
 }
 
 </style>
@@ -624,8 +644,10 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
         <div class="info-card">
           <h4>📬 Contact</h4>
           <ul>
-            <li><a href="mailto:mohamedabdelhamed382@gmail.com" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color=''">mohamedabdelhamed382@gmail.com</a></li>
+            <li><a href="mailto:mohamedabdelhamed382@gmail.com">mohamedabdelhamed382@gmail.com</a></li>
             <li><a href="tel:+201229680487">+20 122 968 0487</a></li>
+            <li><a href="https://wa.me/201229680487" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://www.linkedin.com/in/mohamed-abdelhamed-ahmed/" target="_blank" rel="noopener">LinkedIn</a></li>
             <li>Cairo, Egypt</li>
           </ul>
         </div>
@@ -662,13 +684,13 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
     <h2 class="section-title fade-up">Apps <strong>I've built</strong></h2>
     <p class="section-sub fade-up">Production iOS applications spanning healthcare, FinTech, marketplaces, delivery &amp; media streaming.</p>
     <div class="projects-grid">
-      <div class="proj-card fade-up"><div class="proj-top"><div class="proj-icon" style="background:transparent;padding:0;overflow:hidden"><img src="assets/homemaint-icon.png" loading="lazy" alt="My Home Maintenance" style="width:100%;height:100%;object-fit:cover;border-radius:14px"></div><span class="badge badge-live">Live</span></div><div class="proj-body"><h3>My Home Maintenance</h3><div class="proj-company">Awamer Alshabaka (AAIT) · صيانة منزلي</div><p>Digital home maintenance platform for instant and scheduled plumbing &amp; electrical services — with direct price negotiation between customers and technicians.</p><div class="proj-tech"><span>SwiftUI</span><span>MVVM-C</span><span>Observation</span><span>Combine</span><span>Socket.IO</span><span>HyperPay</span></div><div class="proj-links"><a href="https://apps.apple.com/us/app/%D8%B5%D9%8A%D8%A7%D9%86%D8%A9-%D9%85%D9%86%D8%B2%D9%84%D9%89/id6763056852" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>User</a><a href="https://apps.apple.com/us/app/%D8%B5%D9%8A%D8%A7%D9%86%D8%A9-%D9%85%D9%86%D8%B2%D9%84%D9%89-%D9%85%D9%82%D8%AF%D9%85-%D8%AE%D8%AF%D9%85%D8%A9/id6763080645" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Provider</a></div><button type="button" class="proj-view-btn" onclick="openAppModal('homemaint', event)">Explore App</button></div></div>
-      <div class="proj-card fade-up"><div class="proj-top"><div class="proj-icon" style="background:transparent;padding:0;overflow:hidden"><img src="assets/osr-icon.png" loading="lazy" alt="OSR" style="width:100%;height:100%;object-fit:cover;border-radius:14px"></div><span class="badge badge-live">Live</span></div><div class="proj-body"><h3>OSR</h3><div class="proj-company">Awamer Alshabaka (AAIT) · أسر</div><p>Three-app marketplace ecosystem — customers order from productive families, providers manage offerings, and drivers fulfill deliveries with live tracking and Moyasar payments.</p><div class="proj-tech"><span>SwiftUI</span><span>MVVM-C</span><span>Observation</span><span>Combine</span><span>Socket.IO</span><span>Moyasar</span></div><div class="proj-links"><a href="https://apps.apple.com/us/app/osr/id6766071481" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>User</a><a href="https://apps.apple.com/us/app/osr-provider/id6766072475" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Provider</a><a href="https://apps.apple.com/us/app/osr-delegate/id6766073658" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Driver</a></div><button type="button" class="proj-view-btn" onclick="openAppModal('osr', event)">Explore App</button></div></div>
-      <div class="proj-card fade-up"><div class="proj-top"><div class="proj-icon" style="background:transparent;padding:0;overflow:hidden"><img src="assets/img-002.png" loading="lazy" alt="Muakad" style="width:100%;height:100%;object-fit:cover;border-radius:14px"></div><span class="badge badge-live">Live</span></div><div class="proj-body"><h3>Muakad</h3><div class="proj-company">Awamer Alshabaka (AAIT)</div><p>Healthcare platform supporting instant and scheduled consultations with real-time chat, video calls, appointment management, and secure payments.</p><div class="proj-tech"><span>UIKit</span><span>MVVM-C</span><span>Combine</span><span>Socket.IO</span><span>OpenTalk SDK</span><span>MyFatoorah</span></div><div class="proj-links"><a href="https://apps.apple.com/us/app/muakad-%D9%85%D8%A4%D9%83%D8%AF/id6479943556" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>User</a><a href="https://apps.apple.com/us/app/muakaddoctor-%D9%85%D8%A4%D9%83%D8%AF-%D8%B7%D8%A8%D9%8A%D8%A8/id6497066336" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Provider</a></div><button type="button" class="proj-view-btn" onclick="openAppModal('muakad', event)">Explore App</button></div></div>
-      <div class="proj-card fade-up"><div class="proj-top"><div class="proj-icon" style="background:transparent;padding:0;overflow:hidden"><img src="assets/souqhouta-icon.png" loading="lazy" alt="Souq Al Houta" style="width:100%;height:100%;object-fit:cover;border-radius:14px"></div><span class="badge badge-live">Live</span></div><div class="proj-body"><h3>Souq Al Houta</h3><div class="proj-company">Awamer Alshabaka (AAIT) · سوق الحوطة · 60K+ Users</div><p>Multi-category delivery platform for restaurants, cafes, groceries &amp; more — browse, order, and track deliveries serving 60K+ users.</p><div class="proj-tech"><span>UIKit</span><span>MVVM</span><span>REST APIs</span></div><div class="proj-links"><a href="https://apps.apple.com/us/app/souq-alhota-%D8%B3%D9%88%D9%82-%D8%A7%D9%84%D8%AD%D9%88%D8%B7%D8%A9/id1595499892" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>App Store</a></div><button type="button" class="proj-view-btn" onclick="openAppModal('souqhouta', event)">Explore App</button></div></div>
-      <div class="proj-card fade-up"><div class="proj-top"><div class="proj-icon" style="background:transparent;padding:0;overflow:hidden"><img src="assets/img-003.png" loading="lazy" alt="Laser Home" style="width:100%;height:100%;object-fit:cover;border-radius:14px"></div><span class="badge badge-live">Live</span></div><div class="proj-body"><h3>LaserHome</h3><div class="proj-company">Awamer Alshabaka (AAIT)</div><p>Beauty and skincare consultation platform featuring specialist discovery, consultation booking, wallet, and customer support.</p><div class="proj-tech"><span>UIKit</span><span>MVVM-C</span><span>Combine</span><span>MyFatoorah</span></div><div class="proj-links"><a href="https://apps.apple.com/us/app/laserhome-%D8%A7%D9%84%D9%84%D9%8A%D8%B2%D8%B1-%D8%A7%D9%84%D9%85%D9%86%D8%B2%D9%84%D9%8A/id6736399514" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>User</a><a href="https://apps.apple.com/us/app/laserhomespecialists-%D8%A7%D8%AE%D8%B5%D8%A7%D8%A6%D9%8A%D8%A7%D8%AA/id6736430514" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Specialist</a></div><button type="button" class="proj-view-btn" onclick="openAppModal('laser', event)">Explore App</button></div></div>
-      <div class="proj-card fade-up"><div class="proj-top"><div class="proj-icon" style="background:transparent;padding:0;overflow:hidden"><img src="assets/img-004.png" loading="lazy" alt="Mehanti Bedi" style="width:100%;height:100%;object-fit:cover;border-radius:14px"></div><span class="badge badge-live">Live</span></div><div class="proj-body"><h3>Mehanti Bedi</h3><div class="proj-company">Awamer Alshabaka (AAIT)</div><p>Home services marketplace connecting customers with skilled technicians through booking, secure payments, wallet, and analytics workflows.</p><div class="proj-tech"><span>UIKit</span><span>MVC</span><span>REST APIs</span><span>Apple Pay</span><span>PayTabs</span><span>AppsFlyer</span></div><div class="proj-links"><a href="https://apps.apple.com/us/app/mehanti-bedi-%D9%85%D9%87%D9%86%D8%AA%D9%8A-%D8%A8%D9%8A%D8%AF%D9%8A/id6747306409" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>App Store</a></div><button type="button" class="proj-view-btn" onclick="openAppModal('mehanti', event)">Explore App</button></div></div>
-      <div class="proj-card fade-up"><div class="proj-top"><div class="proj-icon" style="background:transparent;padding:0;overflow:hidden"><img src="assets/img-005.png" loading="lazy" alt="GlobalM" style="width:100%;height:100%;object-fit:cover;border-radius:14px"></div><span class="badge badge-live">Live</span></div><div class="proj-body"><h3>GlobalM</h3><div class="proj-company">Algorezmi</div><p>Live media streaming platform delivering news and sports content with low-latency SRT streaming using AVFoundation.</p><div class="proj-tech"><span>Programmatic UIKit</span><span>VIPER</span><span>AVFoundation</span></div><div class="proj-links"><a href="https://apps.apple.com/us/app/globalm-media/id1506890745" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>App Store</a></div><button type="button" class="proj-view-btn" onclick="openAppModal('globalm', event)">Explore App</button></div></div>
+      <div class="proj-card fade-up" data-app="homemaint"><div class="proj-top"><div class="proj-icon" style="background:transparent;padding:0;overflow:hidden"><img src="assets/homemaint-icon.png" loading="lazy" alt="My Home Maintenance" style="width:100%;height:100%;object-fit:cover;border-radius:14px"></div><span class="badge badge-live">Live</span></div><div class="proj-body"><h3>My Home Maintenance</h3><div class="proj-company">Awamer Alshabaka (AAIT) · صيانة منزلي</div><p>Digital home maintenance platform for instant and scheduled plumbing &amp; electrical services — with direct price negotiation between customers and technicians.</p><div class="proj-tech"><span>SwiftUI</span><span>MVVM-C</span><span>Observation</span><span>Combine</span><span>Socket.IO</span><span>HyperPay</span></div><div class="proj-links"><a href="https://apps.apple.com/us/app/%D8%B5%D9%8A%D8%A7%D9%86%D8%A9-%D9%85%D9%86%D8%B2%D9%84%D9%89/id6763056852" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>User</a><a href="https://apps.apple.com/us/app/%D8%B5%D9%8A%D8%A7%D9%86%D8%A9-%D9%85%D9%86%D8%B2%D9%84%D9%89-%D9%85%D9%82%D8%AF%D9%85-%D8%AE%D8%AF%D9%85%D8%A9/id6763080645" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Provider</a></div><button type="button" class="proj-view-btn" onclick="openAppModal('homemaint', event)">Explore App</button></div></div>
+      <div class="proj-card fade-up" data-app="osr"><div class="proj-top"><div class="proj-icon" style="background:transparent;padding:0;overflow:hidden"><img src="assets/osr-icon.png" loading="lazy" alt="OSR" style="width:100%;height:100%;object-fit:cover;border-radius:14px"></div><span class="badge badge-live">Live</span></div><div class="proj-body"><h3>OSR</h3><div class="proj-company">Awamer Alshabaka (AAIT) · أسر</div><p>Three-app marketplace ecosystem — customers order from productive families, providers manage offerings, and drivers fulfill deliveries with live tracking and Moyasar payments.</p><div class="proj-tech"><span>SwiftUI</span><span>MVVM-C</span><span>Observation</span><span>Combine</span><span>Socket.IO</span><span>Moyasar</span></div><div class="proj-links"><a href="https://apps.apple.com/us/app/osr/id6766071481" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>User</a><a href="https://apps.apple.com/us/app/osr-provider/id6766072475" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Provider</a><a href="https://apps.apple.com/us/app/osr-delegate/id6766073658" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Driver</a></div><button type="button" class="proj-view-btn" onclick="openAppModal('osr', event)">Explore App</button></div></div>
+      <div class="proj-card fade-up" data-app="muakad"><div class="proj-top"><div class="proj-icon" style="background:transparent;padding:0;overflow:hidden"><img src="assets/img-002.png" loading="lazy" alt="Muakad" style="width:100%;height:100%;object-fit:cover;border-radius:14px"></div><span class="badge badge-live">Live</span></div><div class="proj-body"><h3>Muakad</h3><div class="proj-company">Awamer Alshabaka (AAIT)</div><p>Healthcare platform supporting instant and scheduled consultations with real-time chat, video calls, appointment management, and secure payments.</p><div class="proj-tech"><span>UIKit</span><span>MVVM-C</span><span>Combine</span><span>Socket.IO</span><span>OpenTalk SDK</span><span>MyFatoorah</span></div><div class="proj-links"><a href="https://apps.apple.com/us/app/muakad-%D9%85%D8%A4%D9%83%D8%AF/id6479943556" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>User</a><a href="https://apps.apple.com/us/app/muakaddoctor-%D9%85%D8%A4%D9%83%D8%AF-%D8%B7%D8%A8%D9%8A%D8%A8/id6497066336" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Provider</a></div><button type="button" class="proj-view-btn" onclick="openAppModal('muakad', event)">Explore App</button></div></div>
+      <div class="proj-card fade-up" data-app="souqhouta"><div class="proj-top"><div class="proj-icon" style="background:transparent;padding:0;overflow:hidden"><img src="assets/souqhouta-icon.png" loading="lazy" alt="Souq Al Houta" style="width:100%;height:100%;object-fit:cover;border-radius:14px"></div><span class="badge badge-live">Live</span></div><div class="proj-body"><h3>Souq Al Houta</h3><div class="proj-company">Awamer Alshabaka (AAIT) · سوق الحوطة · 60K+ Users</div><p>Multi-category delivery platform for restaurants, cafes, groceries &amp; more — browse, order, and track deliveries serving 60K+ users.</p><div class="proj-tech"><span>UIKit</span><span>MVVM</span><span>REST APIs</span></div><div class="proj-links"><a href="https://apps.apple.com/us/app/souq-alhota-%D8%B3%D9%88%D9%82-%D8%A7%D9%84%D8%AD%D9%88%D8%B7%D8%A9/id1595499892" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>App Store</a></div><button type="button" class="proj-view-btn" onclick="openAppModal('souqhouta', event)">Explore App</button></div></div>
+      <div class="proj-card fade-up" data-app="laser"><div class="proj-top"><div class="proj-icon" style="background:transparent;padding:0;overflow:hidden"><img src="assets/img-003.png" loading="lazy" alt="Laser Home" style="width:100%;height:100%;object-fit:cover;border-radius:14px"></div><span class="badge badge-live">Live</span></div><div class="proj-body"><h3>LaserHome</h3><div class="proj-company">Awamer Alshabaka (AAIT)</div><p>Beauty and skincare consultation platform featuring specialist discovery, consultation booking, wallet, and customer support.</p><div class="proj-tech"><span>UIKit</span><span>MVVM-C</span><span>Combine</span><span>MyFatoorah</span></div><div class="proj-links"><a href="https://apps.apple.com/us/app/laserhome-%D8%A7%D9%84%D9%84%D9%8A%D8%B2%D8%B1-%D8%A7%D9%84%D9%85%D9%86%D8%B2%D9%84%D9%8A/id6736399514" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>User</a><a href="https://apps.apple.com/us/app/laserhomespecialists-%D8%A7%D8%AE%D8%B5%D8%A7%D8%A6%D9%8A%D8%A7%D8%AA/id6736430514" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Specialist</a></div><button type="button" class="proj-view-btn" onclick="openAppModal('laser', event)">Explore App</button></div></div>
+      <div class="proj-card fade-up" data-app="mehanti"><div class="proj-top"><div class="proj-icon" style="background:transparent;padding:0;overflow:hidden"><img src="assets/img-004.png" loading="lazy" alt="Mehanti Bedi" style="width:100%;height:100%;object-fit:cover;border-radius:14px"></div><span class="badge badge-live">Live</span></div><div class="proj-body"><h3>Mehanti Bedi</h3><div class="proj-company">Awamer Alshabaka (AAIT)</div><p>Home services marketplace connecting customers with skilled technicians through booking, secure payments, wallet, and analytics workflows.</p><div class="proj-tech"><span>UIKit</span><span>MVC</span><span>REST APIs</span><span>Apple Pay</span><span>PayTabs</span><span>AppsFlyer</span></div><div class="proj-links"><a href="https://apps.apple.com/us/app/mehanti-bedi-%D9%85%D9%87%D9%86%D8%AA%D9%8A-%D8%A8%D9%8A%D8%AF%D9%8A/id6747306409" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>App Store</a></div><button type="button" class="proj-view-btn" onclick="openAppModal('mehanti', event)">Explore App</button></div></div>
+      <div class="proj-card fade-up" data-app="globalm"><div class="proj-top"><div class="proj-icon" style="background:transparent;padding:0;overflow:hidden"><img src="assets/img-005.png" loading="lazy" alt="GlobalM" style="width:100%;height:100%;object-fit:cover;border-radius:14px"></div><span class="badge badge-live">Live</span></div><div class="proj-body"><h3>GlobalM</h3><div class="proj-company">Algorezmi</div><p>Live media streaming platform delivering news and sports content with low-latency SRT streaming using AVFoundation.</p><div class="proj-tech"><span>Programmatic UIKit</span><span>VIPER</span><span>AVFoundation</span></div><div class="proj-links"><a href="https://apps.apple.com/us/app/globalm-media/id1506890745" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>App Store</a></div><button type="button" class="proj-view-btn" onclick="openAppModal('globalm', event)">Explore App</button></div></div>
     </div></div>
 
     </section>
@@ -1159,9 +1181,9 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
         <div class="contact-intro"><h3>Contact Information</h3><p>Feel free to reach out through any channel. I typically respond within 24 hours.</p></div>
         <div class="contact-item"><div class="c-icon">📧</div><div><div class="c-label">Email</div><div class="c-val"><a href="mailto:mohamedabdelhamed382@gmail.com">mohamedabdelhamed382@gmail.com</a></div></div></div>
         <div class="contact-item"><div class="c-icon">📱</div><div><div class="c-label">Phone</div><div class="c-val"><a href="tel:+201229680487">+20 122 968 0487</a></div></div></div>
-        <div class="contact-item"><div class="c-icon">💼</div><div><div class="c-label">LinkedIn</div><div class="c-val"><a href="https://www.linkedin.com/in/mohamed-abdelhamed-ahmed/" target="_blank">mohamed-abdelhamed-ahmed</a></div></div></div>
+        <div class="contact-item"><div class="c-icon">💼</div><div><div class="c-label">LinkedIn</div><div class="c-val"><a href="https://www.linkedin.com/in/mohamed-abdelhamed-ahmed/" target="_blank">LinkedIn</a></div></div></div>
         <div class="contact-item"><div class="c-icon">🐙</div><div><div class="c-label">GitHub</div><div class="c-val"><a href="https://github.com/Mohamedabdelhamed382" target="_blank">Mohamedabdelhamed382</a></div></div></div>
-                <div class="contact-item"><div class="c-icon">💬</div><div><div class="c-label">WhatsApp</div><div class="c-val"><a href="https://wa.me/201229680487" target="_blank">+20 122 968 0487</a></div></div></div>
+                <div class="contact-item"><div class="c-icon">💬</div><div><div class="c-label">WhatsApp</div><div class="c-val"><a href="https://wa.me/201229680487" target="_blank">WhatsApp</a></div></div></div>
         <div class="contact-item"><div class="c-icon">▶️</div><div><div class="c-label">YouTube</div><div class="c-val"><a href="https://www.youtube.com/@MohamedAbdelhamedTech" target="_blank">Mohamed Abdelhamed Tech</a></div></div></div>
         <div class="contact-item"><div class="c-icon">📍</div><div><div class="c-label">Location</div><div class="c-val">Cairo, Egypt</div></div></div>
       </div>
@@ -1217,14 +1239,19 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
 </div>
 
 <!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
-  <div class="lightbox-img-wrap" onclick="event.stopPropagation()">
-    <div class="lightbox-close" onclick="closeLightbox()">✕</div>
-    <div class="lightbox-nav lightbox-prev" onclick="lbPrev()">‹</div>
-    <img id="lightboxImg" src="" alt="">
-    <div class="lightbox-nav lightbox-next" onclick="lbNext()">›</div>
-    <div class="lightbox-counter" id="lbCounter"></div>
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-toolbar">
+    <span id="lbCounter">1 / 1</span>
+    <button type="button" class="lightbox-close-btn" onclick="closeLightbox()" aria-label="Close">✕</button>
   </div>
+  <div class="lightbox-stage">
+    <button type="button" class="lightbox-nav lightbox-prev" id="lbPrevBtn" onclick="lbPrev()" aria-label="Previous">‹</button>
+    <div class="lightbox-scroll" id="lightboxScroll">
+      <img id="lightboxImg" src="" alt="Screenshot">
+    </div>
+    <button type="button" class="lightbox-nav lightbox-next" id="lbNextBtn" onclick="lbNext()" aria-label="Next">›</button>
+  </div>
+  <div class="lightbox-hint">Scroll if needed · Arrow keys or swipe to browse · Esc to close</div>
 </div>
 
 <script>
@@ -1338,9 +1365,9 @@ function getAppData(appKey) {
 }
 
 function openAppModal(appKey, evt) {
-  if (evt) { evt.preventDefault(); evt.currentTarget?.blur(); }
+  if (evt) { evt.preventDefault(); evt.stopPropagation(); evt.currentTarget?.blur(); }
   const overlay = document.getElementById('appModalOverlay');
-  if (!overlay || overlay.classList.contains('open')) return;
+  if (!overlay) return;
 
   const data = getAppData(appKey);
   if (!data) return;
@@ -1389,6 +1416,7 @@ function switchModalTab(idx) {
 }
 
 function closeModal() {
+  closeLightbox();
   document.getElementById('appModalOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }
@@ -1397,7 +1425,7 @@ function closeAppModal(e) {
   if (e.target === document.getElementById('appModalOverlay')) closeModal();
 }
 
-// Close on Escape
+// Close modal on Escape (only when lightbox is closed)
 document.addEventListener('keydown', e => {
   if (e.key !== 'Escape') return;
   if (document.getElementById('lightbox')?.classList.contains('open')) return;
@@ -1406,50 +1434,112 @@ document.addEventListener('keydown', e => {
 
 
 /* ── LIGHTBOX ── */
-let lbImages = [], lbIndex = 0;
+let lbImages = [], lbIndex = 0, lbTouchStartX = 0, lbTouchStartY = 0;
 
 function openLightbox(imgs, idx) {
   lbImages = imgs;
   lbIndex = idx;
-  renderLb();
-  document.getElementById('lightbox').classList.add('open');
+  const lb = document.getElementById('lightbox');
+  lb.classList.add('open');
+  lb.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+  renderLb();
 }
 
 function renderLb() {
-  document.getElementById('lightboxImg').src = lbImages[lbIndex];
-  document.getElementById('lbCounter').textContent = (lbIndex + 1) + ' / ' + lbImages.length;
+  const img = document.getElementById('lightboxImg');
+  const scroll = document.getElementById('lightboxScroll');
+  const counter = document.getElementById('lbCounter');
+  const prevBtn = document.getElementById('lbPrevBtn');
+  const nextBtn = document.getElementById('lbNextBtn');
+  if (!img || !scroll) return;
+
+  img.src = lbImages[lbIndex];
+  scroll.scrollTop = 0;
+  scroll.scrollLeft = 0;
+  if (counter) counter.textContent = (lbIndex + 1) + ' / ' + lbImages.length;
+  if (prevBtn) prevBtn.disabled = lbImages.length <= 1;
+  if (nextBtn) nextBtn.disabled = lbImages.length <= 1;
 }
 
-function lbNext() { lbIndex = (lbIndex + 1) % lbImages.length; renderLb(); }
-function lbPrev() { lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length; renderLb(); }
+function lbNext() {
+  if (lbImages.length <= 1) return;
+  lbIndex = (lbIndex + 1) % lbImages.length;
+  renderLb();
+}
+function lbPrev() {
+  if (lbImages.length <= 1) return;
+  lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length;
+  renderLb();
+}
 
 function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
-  // Only restore scroll if modal is not open
-  if (!document.getElementById('appModalOverlay').classList.contains('open')) {
-    document.body.style.overflow = '';
-  }
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  if (!lb?.classList.contains('open')) return;
+
+  lb.classList.remove('open');
+  lb.setAttribute('aria-hidden', 'true');
+  if (img) img.removeAttribute('src');
+
+  const modalOpen = document.getElementById('appModalOverlay')?.classList.contains('open');
+  document.body.style.overflow = modalOpen ? 'hidden' : '';
 }
 
-function closeLightboxOutside(e) {
-  if (e.target === document.getElementById('lightbox')) closeLightbox();
-}
+document.getElementById('lightbox')?.addEventListener('click', e => {
+  if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-stage')) closeLightbox();
+});
+
+document.getElementById('lightboxScroll')?.addEventListener('click', e => e.stopPropagation());
 
 // Arrow keys
 document.addEventListener('keydown', e => {
   if (!document.getElementById('lightbox').classList.contains('open')) return;
-  if (e.key === 'ArrowRight') lbNext();
-  if (e.key === 'ArrowLeft') lbPrev();
-  if (e.key === 'Escape') closeLightbox();
-});
+  if (e.key === 'ArrowRight') { e.preventDefault(); lbNext(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); lbPrev(); }
+  if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); closeLightbox(); }
+}, true);
 
-// Wire up lightbox via event delegation (no duplicate listeners)
+// Swipe between images (horizontal only)
+document.getElementById('lightbox')?.addEventListener('touchstart', e => {
+  if (!e.touches.length) return;
+  lbTouchStartX = e.touches[0].clientX;
+  lbTouchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+document.getElementById('lightbox')?.addEventListener('touchend', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  const dx = e.changedTouches[0].clientX - lbTouchStartX;
+  const dy = e.changedTouches[0].clientY - lbTouchStartY;
+  if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy)) return;
+  if (dx < 0) lbNext();
+  else lbPrev();
+}, { passive: true });
+
 function initLightboxImages() {
   if (document.body.dataset.lbInit) return;
   document.body.dataset.lbInit = '1';
 
+  document.querySelectorAll('.proj-card[data-app]').forEach(card => {
+    card.addEventListener('click', e => {
+      if (e.target.closest('a, button')) return;
+      openAppModal(card.dataset.app, e);
+    });
+  });
+
+  // Capture phase so clicks work inside the app modal (which stops propagation)
   document.body.addEventListener('click', e => {
+    const modalIconWrap = e.target.closest('.app-modal-head-icon');
+    if (modalIconWrap) {
+      const img = modalIconWrap.querySelector('img');
+      if (img?.src) {
+        e.preventDefault();
+        e.stopPropagation();
+        openLightbox([img.src], 0);
+        return;
+      }
+    }
+
     const certWrap = e.target.closest('#certificates .cert-img-wrap');
     if (certWrap) {
       e.preventDefault();
@@ -1470,11 +1560,12 @@ function initLightboxImages() {
 
     const img = e.target.closest('.ss-scroll img');
     if (!img) return;
+    e.preventDefault();
     e.stopPropagation();
     const scroll = img.closest('.ss-scroll');
     const imgs = Array.from(scroll.querySelectorAll('img'));
     openLightbox(imgs.map(im => im.src), imgs.indexOf(img));
-  });
+  }, true);
 }
 
 document.addEventListener('DOMContentLoaded', initLightboxImages);
