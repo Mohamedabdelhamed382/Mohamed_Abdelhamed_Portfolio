@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mohamed AbdElhamed — iOS Engineer</title>
-<meta name="description" content="iOS Engineer with 4+ years building 15+ production apps serving 60K+ users across healthcare, FinTech, marketplaces &amp; media streaming. Based in Cairo, Egypt.">
-<meta property="og:title" content="Mohamed AbdElhamed — iOS Engineer">
+<title>Mohamed AbdElhamed — Senior iOS Engineer</title>
+<meta name="description" content="Senior iOS engineer specialized in smart application development. 4+ years building 15+ production apps serving 60K+ users. Based in Cairo, Egypt.">
+<meta property="og:title" content="Mohamed AbdElhamed — Senior iOS Engineer">
 <meta property="og:description" content="4+ years · 15+ apps · 60K+ users · Swift, SwiftUI, MVVM-C, VIPER">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mohamedabdelhamed382.github.io/Mohamed_Abdelhamed_Portfolio/">
@@ -13,10 +13,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1B6CF2">
 <link rel="canonical" href="https://mohamedabdelhamed382.github.io/Mohamed_Abdelhamed_Portfolio/">
+<script>(function(){var l=localStorage.getItem('portfolio-lang')||'ar';document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';})();</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍎</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg:#FFFFFF;--bg-2:#F8F8F6;--bg-3:#F2F1EE;--bg-4:#ECEAE6;
@@ -52,6 +53,11 @@ nav.scrolled{background:rgba(255,255,255,.94);backdrop-filter:blur(20px);-webkit
 .nav-links a:hover{color:var(--blue)}.nav-links a:hover::after{width:100%}
 .nav-cta{display:inline-flex;align-items:center;gap:8px;padding:9px 22px;border-radius:var(--r-sm);background:var(--blue);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:all .25s;box-shadow:0 2px 10px var(--blue-glow)}
 .nav-cta:hover{background:var(--blue-lt);transform:translateY(-1px)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.lang-switch{display:flex;align-items:center;gap:2px;padding:3px;border-radius:var(--r-sm);background:var(--bg-2);border:1px solid var(--border)}
+.lang-btn{padding:6px 11px;border:none;border-radius:6px;background:transparent;font-family:var(--body);font-size:.68rem;font-weight:700;letter-spacing:.06em;color:var(--text-3);cursor:pointer;transition:all .2s}
+.lang-btn.active{background:var(--blue);color:#fff}
+.lang-btn:hover:not(.active){color:var(--blue)}
 .hamburger{display:none;background:none;border:none;flex-direction:column;gap:5px;padding:4px}
 .hamburger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:1px;transition:.3s}
 
@@ -127,7 +133,7 @@ section{padding:108px 52px}
 .proj-icon{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
 .badge{padding:4px 11px;border-radius:30px;font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .badge-live{background:rgba(22,163,74,.1);border:1px solid rgba(22,163,74,.2);color:#16A34A}
-.badge-users{background:rgba(27,108,242,.1);border:1px solid rgba(27,108,242,.2);color:var(--blue);margin-left:6px;font-size:.55rem}
+.badge-users{background:rgba(27,108,242,.1);border:1px solid rgba(27,108,242,.2);color:var(--blue);margin-inline-start:6px;font-size:.55rem}
 .badge-pending{background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.2);color:#B45309}
 .proj-body{padding:16px 24px 24px;flex:1;display:flex;flex-direction:column}
 .proj-body h3{font-size:1rem;font-weight:700;margin-bottom:3px;color:var(--text)}
@@ -175,6 +181,7 @@ section{padding:108px 52px}
 .c-icon{width:44px;height:44px;border-radius:12px;background:var(--blue-dim);border:1px solid rgba(27,108,242,.15);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
 .c-label{font-family:var(--mono);font-size:.6rem;color:var(--text-3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
 .c-val{font-size:.86rem;font-weight:600;color:var(--text)}.c-val a:hover{color:var(--blue)}
+.c-ltr{direction:ltr;unicode-bidi:embed;display:inline-block}
 .contact-form{display:flex;flex-direction:column;gap:14px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .form-group{display:flex;flex-direction:column;gap:7px}
@@ -198,8 +205,82 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
 .fade-up{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .fade-up.visible{opacity:1;transform:translateY(0)}
 
+/* RTL */
+html[dir="rtl"] body{font-family:'Cairo',var(--body),sans-serif;text-align:right}
+html[dir="rtl"] .hero h1,
+html[dir="rtl"] .hero-desc,
+html[dir="rtl"] .about-body p,
+html[dir="rtl"] .section-sub,
+html[dir="rtl"] .section-title,
+html[dir="rtl"] .exp-card h3,
+html[dir="rtl"] .exp-card .co-name,
+html[dir="rtl"] .exp-bullets li,
+html[dir="rtl"] .proj-body p,
+html[dir="rtl"] .proj-body h3,
+html[dir="rtl"] .contact-intro h3,
+html[dir="rtl"] .contact-intro p,
+html[dir="rtl"] .edu-card h3,
+html[dir="rtl"] .edu-faculty,
+html[dir="rtl"] .edu-desc p,
+html[dir="rtl"] .cert-info p,
+html[dir="rtl"] .app-modal-desc,
+html[dir="rtl"] .app-modal-body .story-desc,
+html[dir="rtl"] .story-features li,
+html[dir="rtl"] .app-modal-features li{text-align:start}
+html[dir="rtl"] .nav-links a,
+html[dir="rtl"] .section-label,
+html[dir="rtl"] .hero-eyebrow,
+html[dir="rtl"] .btn-blue,
+html[dir="rtl"] .btn-outline,
+html[dir="rtl"] .nav-cta,
+html[dir="rtl"] .about-stat .lbl,
+html[dir="rtl"] .psc-key,
+html[dir="rtl"] .proj-company,
+html[dir="rtl"] .badge,
+html[dir="rtl"] .proj-link,
+html[dir="rtl"] .form-btn,
+html[dir="rtl"] .footer-links a,
+html[dir="rtl"] .app-modal-tab,
+html[dir="rtl"] .app-modal-head-sub,
+html[dir="rtl"] .edu-badge,
+html[dir="rtl"] .edu-meta-label,
+html[dir="rtl"] .cert-month,
+html[dir="rtl"] .info-card h4,
+html[dir="rtl"] .proj-view-btn{text-transform:none;letter-spacing:0}
+html[dir="rtl"] .section-label .line,
+html[dir="rtl"] .info-card li::before{transform:scaleX(-1)}
+html[dir="rtl"] .info-card li{padding-left:0;padding-right:14px}
+html[dir="rtl"] .info-card li::before{left:auto;right:0}
+html[dir="rtl"] .nav-links a::after{left:auto;right:0}
+html[dir="rtl"] .lang-switch{flex-direction:row-reverse}
+html[dir="rtl"] .hero-blob{right:auto;left:-10%}
+html[dir="rtl"] .exp-nav-item{border-left:none;border-right:2.5px solid transparent}
+html[dir="rtl"] .exp-nav-item.active{border-right-color:var(--blue);border-left-color:transparent}
+html[dir="rtl"] .exp-bullets li{padding-left:0;padding-right:18px}
+html[dir="rtl"] .exp-bullets li::before{left:auto;right:0}
+html[dir="rtl"] .skill-card::after{transform-origin:right}
+html[dir="rtl"] .testi-card::before{right:auto;left:20px}
+html[dir="rtl"] .ss-fade-right,
+html[dir="rtl"] .app-modal-body .ss-fade-right{right:auto;left:0;background:linear-gradient(to right,var(--bg) 0%,transparent 100%)}
+html[dir="rtl"] .c-label,
+html[dir="rtl"] .form-group label{text-transform:none;letter-spacing:0;font-family:var(--body);font-size:.72rem}
+html[dir="rtl"] .contact-item{flex-direction:row;text-align:start}
+html[dir="rtl"] .contact-item>div:last-child{flex:1;min-width:0}
+html[dir="rtl"] .form-group input:not([type="email"]),
+html[dir="rtl"] .form-group textarea{text-align:right}
+html[dir="rtl"] .form-group input[type="email"]{direction:ltr;text-align:left}
+html[dir="rtl"] .form-btn{align-self:flex-start}
+html[dir="rtl"] .photo-stat-card.top{right:auto;left:0}
+html[dir="rtl"] .photo-stat-card.bottom{left:auto;right:0}
+html[dir="rtl"] .app-modal-body .ss-scroll-wrap::after{content:var(--ss-hint)}
+@media(max-width:700px){html[dir="rtl"] .app-modal-body .ss-scroll-wrap::after{content:var(--ss-hint-mob)}}
+html[dir="ltr"] .app-modal-body .ss-scroll-wrap::after{content:var(--ss-hint,"Tap any screenshot to view full size")}
+@media(max-width:700px){html[dir="ltr"] .app-modal-body .ss-scroll-wrap::after{content:var(--ss-hint-mob,"Tap to view full size · Swipe to browse")}}
+
 @media(max-width:1000px){
   nav{padding:0 28px}.nav-links{display:none}.nav-cta{display:none}.hamburger{display:flex}
+  .lang-switch{margin-left:auto;margin-right:8px}
+  html[dir="rtl"] .lang-switch{margin-left:8px;margin-right:auto}
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);padding:24px 28px;gap:20px;border-bottom:1px solid var(--border);z-index:100}
   .hero{padding:100px 28px 70px}
   .hero-inner,.about-grid,.contact-grid{grid-template-columns:1fr}
@@ -209,6 +290,8 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
   .exp-nav{position:static;flex-direction:row;flex-wrap:wrap}
   .exp-nav-item{border-left:none;border-bottom:2.5px solid transparent}
   .exp-nav-item.active{border-bottom-color:var(--blue)}
+  html[dir="rtl"] .exp-nav-item{border-right:none}
+  html[dir="rtl"] .exp-nav-item.active{border-right-color:transparent}
   .form-row{grid-template-columns:1fr}
   footer{padding:28px;flex-direction:column;text-align:center}
 }
@@ -460,7 +543,7 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
 .app-modal-body .story-links{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
 .app-modal-body .ss-scroll-wrap{margin-top:20px;position:relative}
 .app-modal-body .ss-scroll-wrap::after{
-  content:'Tap any screenshot to view full size';
+  content:var(--ss-hint,"Tap any screenshot to view full size");
   display:block;margin-top:10px;font-size:.68rem;color:var(--text-3);
   font-family:var(--mono);letter-spacing:.04em;text-align:center;
 }
@@ -552,7 +635,7 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
 @media(max-width:700px){
   .lightbox-stage{padding:0 6px 8px}
   .lightbox-nav{width:38px;height:38px;font-size:1.2rem}
-  .app-modal-body .ss-scroll-wrap::after{content:'Tap to view full size · Swipe to browse'}
+  .app-modal-body .ss-scroll-wrap::after{content:var(--ss-hint-mob,"Tap to view full size · Swipe to browse")}
 }
 
 </style>
@@ -564,15 +647,21 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
 <nav id="navbar">
   <a href="#" class="nav-logo">M<em>.</em>AbdElhamed</a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#certificates">Awards</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about" id="nav-about">About</a></li>
+    <li><a href="#experience" id="nav-exp">Experience</a></li>
+    <li><a href="#projects" id="nav-proj">Projects</a></li>
+    <li><a href="#skills" id="nav-skills">Skills</a></li>
+    <li><a href="#education" id="nav-edu">Education</a></li>
+    <li><a href="#certificates" id="nav-awards">Awards</a></li>
+    <li><a href="#contact" id="nav-contact">Contact</a></li>
   </ul>
-  <a href="mailto:mohamedabdelhamed382@gmail.com" class="nav-cta">Hire Me</a>
+  <div class="nav-actions">
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" class="lang-btn active" data-lang="ar" aria-pressed="true">عربي</button>
+    </div>
+    <a href="mailto:mohamedabdelhamed382@gmail.com" class="nav-cta" id="nav-hire">Hire Me</a>
+  </div>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
@@ -580,30 +669,30 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
   <div class="hero-blob"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-eyebrow"><span class="pulse"></span> OPEN TO WORK</div>
-      <h1>Mohamed<br><strong>AbdElhamed</strong><br><em>iOS Engineer</em></h1>
-      <p class="hero-desc">4+ years building 15+ production apps serving 60K+ users across AI, healthcare, FinTech, marketplaces, and media streaming. Expert in Swift, SwiftUI, and scalable architecture.</p>
+      <div class="hero-eyebrow"><span class="pulse"></span> <span id="hero-eyebrow">OPEN TO WORK</span></div>
+      <h1>Mohamed<br><strong>AbdElhamed</strong><br><em id="hero-role">Senior iOS Engineer</em></h1>
+      <p class="hero-desc" id="hero-desc">Senior iOS engineer specialized in smart application development — 4+ years building 15+ production apps serving 60K+ users across AI, healthcare, FinTech, marketplaces, and media streaming.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn-blue">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          View Projects
+          <span id="hero-view-proj">View Projects</span>
         </a>
         <a href="assets/Mohamed_AbdElhamed_iOS_Engineer_CV.pdf" class="btn-outline" target="_blank" download>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download CV
+          <span id="hero-cv">Download CV</span>
         </a>
-        <a href="#contact" class="btn-outline">Get in Touch</a>
+        <a href="#contact" class="btn-outline" id="hero-touch">Get in Touch</a>
       </div>
     </div>
     <div class="hero-visual">
       <div class="photo-wrapper">
         <div class="photo-ring"></div>
         <div class="photo-frame">
-          <img src="assets/img-001.png" loading="lazy" alt="Mohamed AbdElhamed — iOS Engineer" class="profile-photo">
+          <img src="assets/img-001.png" loading="lazy" alt="Mohamed AbdElhamed — Senior iOS Engineer" class="profile-photo">
         </div>
         <div class="photo-badge">
           <span class="badge-dot"></span>
-          <span>OPEN TO WORK</span>
+          <span id="hero-badge">OPEN TO WORK</span>
         </div>
 
       </div>
@@ -615,40 +704,39 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
   <div class="section-inner">
     <div class="about-grid">
       <div class="fade-up">
-        <span class="section-label"><span class="line"></span> About Me</span>
+        <span class="section-label"><span class="line"></span> <span id="about-label">About Me</span></span>
                 <div class="about-body">
-          <p>iOS Engineer with 4+ years of experience building and scaling production-grade iOS applications across AI, healthcare, FinTech, marketplaces, media streaming, and real-time systems.</p>
-          <p>Built, maintained, and scaled 15+ production iOS applications published on the App Store using Swift, SwiftUI, UIKit, Combine, and modern architectures including MVVM-C, Clean Architecture, and VIPER — serving 60K+ users.</p>
-          <p>Strong expertise in real-time communication, VoIP/video streaming, GPS tracking, payment gateway integrations, and App Store release management. I also leverage AI-assisted development tools to ship faster without compromising quality.</p>
+          <p id="about-p1">Senior iOS engineer specialized in smart application development, with 4+ years of experience building and scaling production-grade iOS applications across AI, healthcare, FinTech, marketplaces, media streaming, and real-time systems.</p>
+          <p id="about-p2">Built, maintained, and scaled 15+ production iOS applications published on the App Store using Swift, SwiftUI, UIKit, Combine, and modern architectures including MVVM-C, Clean Architecture, and VIPER — serving 60K+ users.</p>
+          <p id="about-p3">Strong expertise in real-time communication, VoIP/video streaming, GPS tracking, payment gateway integrations, and App Store release management. I also leverage AI-assisted development tools to ship faster without compromising quality.</p>
         </div><div class="about-stats">
-          <div class="about-stat"><div class="num">4+</div><div class="lbl">Years Experience</div></div>
-          <div class="about-stat"><div class="num">15+</div><div class="lbl">Production Apps</div></div>
-          <div class="about-stat"><div class="num">60K+</div><div class="lbl">Users Served</div></div>
-          <div class="about-stat"><div class="num">🏆</div><div class="lbl">Employee of Month</div></div>
+          <div class="about-stat"><div class="num">4+</div><div class="lbl" id="about-stat1">Years Experience</div></div>
+          <div class="about-stat"><div class="num">15+</div><div class="lbl" id="about-stat2">Production Apps</div></div>
+          <div class="about-stat"><div class="num">60K+</div><div class="lbl" id="about-stat3">Users Served</div></div>
+          <div class="about-stat"><div class="num">🏆</div><div class="lbl" id="about-stat4">Employee of Month</div></div>
         </div></div>
       <div class="info-cards fade-up">
         <div class="info-card">
-          <h4>🎓 Education</h4>
-          <p><strong style="color:var(--text)">Diploma in Computer Science</strong><br>Cairo University — Faculty of Graduate Studies for Statistical Research<br><span style="color:var(--text-3);font-family:var(--mono);font-size:.72rem">Oct 2019 – Jun 2021 · Cairo</span></p>
+          <h4 id="about-edu-title">🎓 Education</h4>
+          <p id="about-edu1"><strong style="color:var(--text)">Diploma in Computer Science</strong><br>Cairo University — Faculty of Graduate Studies for Statistical Research<br><span style="color:var(--text-3);font-family:var(--mono);font-size:.72rem">Oct 2019 – Jun 2021 · Cairo</span></p>
           <br>
-          <p><strong style="color:var(--text)">B.Sc. Information Systems Management</strong><br>H.I.T.C.H — Alexandria<br><span style="color:var(--text-3);font-family:var(--mono);font-size:.72rem">Oct 2013 – May 2017 · Alexandria</span></p>
+          <p id="about-edu2"><strong style="color:var(--text)">B.Sc. Information Systems Management</strong><br>H.I.T.C.H — Alexandria<br><span style="color:var(--text-3);font-family:var(--mono);font-size:.72rem">Oct 2013 – May 2017 · Alexandria</span></p>
         </div>
         <div class="info-card">
-          <h4>🌐 Languages</h4>
-          <ul><li>Arabic — Native</li><li>English — Professional Working Proficiency</li></ul>
+          <h4 id="about-lang-title">🌐 Languages</h4>
+          <ul><li id="about-lang1">Arabic — Native</li><li id="about-lang2">English — Professional Working Proficiency</li></ul>
         </div>
         <div class="info-card">
-          <h4>🏆 Achievement</h4>
-          <p>Employee of the Month — <strong style="color:var(--blue)">August & September 2023</strong><br>Awamer Alshabaka (AAIT)</p>
+          <h4 id="about-ach-title">🏆 Achievement</h4>
+          <p id="about-ach">Employee of the Month — <strong style="color:var(--blue)">August & September 2023</strong><br>Awamer Alshabaka (AAIT)</p>
         </div>
         <div class="info-card">
-          <h4>📬 Contact</h4>
-          <ul>
-            <li><a href="mailto:mohamedabdelhamed382@gmail.com">mohamedabdelhamed382@gmail.com</a></li>
-            <li><a href="tel:+201229680487">+20 122 968 0487</a></li>
-            <li><a href="https://wa.me/201229680487" target="_blank" rel="noopener">WhatsApp</a></li>
-            <li><a href="https://www.linkedin.com/in/mohamed-abdelhamed-ahmed/" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li>Cairo, Egypt</li>
+          <h4 id="about-contact-title">📬 Contact</h4>
+          <ul id="about-contact-list">
+            <li><a href="mailto:mohamedabdelhamed382@gmail.com" class="c-ltr">mohamedabdelhamed382@gmail.com</a></li>
+            <li><a href="tel:+201229680487" class="c-ltr">+20 122 968 0487</a></li>
+            <li><a href="https://wa.me/201229680487" target="_blank" rel="noopener" data-about-link="whatsapp">WhatsApp</a></li>
+            <li><a href="https://www.linkedin.com/in/mohamed-abdelhamed-ahmed/" target="_blank" rel="noopener" data-about-link="linkedin">LinkedIn</a></li>
           </ul>
         </div>
       </div>
@@ -658,9 +746,9 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
 
 <section id="experience">
   <div class="section-inner">
-    <span class="section-label fade-up"><span class="line"></span> Experience</span>
-    <h2 class="section-title fade-up">Work <strong>history</strong></h2>
-    <p class="section-sub fade-up">A journey through building and scaling iOS applications across diverse industries.</p>
+    <span class="section-label fade-up"><span class="line"></span> <span id="exp-label">Experience</span></span>
+    <h2 class="section-title fade-up" id="exp-title">Work <strong>history</strong></h2>
+    <p class="section-sub fade-up" id="exp-sub">A journey through building and scaling iOS applications across diverse industries.</p>
     <div class="exp-layout fade-up">
       <div class="exp-nav" id="expNav">
         <div class="exp-nav-item active" data-panel="aait2"><div class="co">Awamer Alshabaka</div><div class="dates">Jan 2026 – Present</div></div>
@@ -669,8 +757,8 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
         <div class="exp-nav-item" data-panel="algorezmi"><div class="co">Algorezmi</div><div class="dates">Jan 2022 – Nov 2022</div></div>
       </div>
       <div>
-                <div class="exp-panel active" id="aait2"><div class="exp-card"><h3>Mid-level iOS Engineer</h3><div class="co-name">Awamer Alshabaka (AAIT)</div><div class="meta"><span>January 2026 – Present</span><span>Hybrid · Mansoura, Egypt</span></div><ul class="exp-bullets"><li>Built, maintained, and scaled 15+ production-grade iOS applications serving 60K+ users across healthcare, FinTech, marketplaces, and media streaming</li><li>Leveraged AI-assisted development tools including Claude Code, GitHub Copilot, Cursor, and Gemini to accelerate feature delivery and improve code quality</li><li>Led implementation of new features across live applications while collaborating with cross-functional teams</li><li>Diagnosed, debugged, and resolved critical production issues, improving stability, performance, and App Store compliance</li><li>Mentored junior iOS developers through code reviews, technical guidance, and knowledge sharing</li><li>Managed App Store releases, TestFlight distributions, and production deployments</li></ul></div></div>
-                <div class="exp-panel" id="aait1"><div class="exp-card"><h3>iOS Engineer</h3><div class="co-name">Awamer Alshabaka (AAIT)</div><div class="meta"><span>Apr 2023 – Jan 2026</span><span>On-Site · Mansoura, Egypt</span></div><ul class="exp-bullets"><li>Built and shipped production iOS applications using Swift, SwiftUI, UIKit, Combine, MVVM-C, and Coordinator</li><li>Developed real-time features including live chat, GPS tracking, live auctions, push notifications, and live updates using Socket.IO and Firebase</li><li>Integrated multiple payment gateways including MyFatoorah, HyperPay, Apple Pay, PayTabs, Moyasar, and Telr</li><li>Refactored legacy modules into MVVM-C and Clean Architecture, improving maintainability and accelerating feature development</li><li>Optimized application performance, memory usage, and launch time for smooth App Store releases</li><li>Awarded Employee of the Month — August &amp; September 2023</li></ul></div></div>
+                <div class="exp-panel active" id="aait2"><div class="exp-card"><h3>Senior iOS Engineer</h3><div class="co-name">Awamer Alshabaka (AAIT)</div><div class="meta"><span>January 2026 – Present</span><span>Remote · Saudi Arabia</span></div><ul class="exp-bullets"><li>Built, maintained, and scaled 15+ production-grade iOS applications serving 60K+ users across healthcare, FinTech, marketplaces, and media streaming</li><li>Leveraged AI-assisted development tools including Claude Code, GitHub Copilot, Cursor, and Gemini to accelerate feature delivery and improve code quality</li><li>Led implementation of new features across live applications while collaborating with cross-functional teams</li><li>Diagnosed, debugged, and resolved critical production issues, improving stability, performance, and App Store compliance</li><li>Mentored junior iOS developers through code reviews, technical guidance, and knowledge sharing</li><li>Managed App Store releases, TestFlight distributions, and production deployments</li></ul></div></div>
+                <div class="exp-panel" id="aait1"><div class="exp-card"><h3>iOS Engineer</h3><div class="co-name">Awamer Alshabaka (AAIT)</div><div class="meta"><span>Apr 2023 – Jan 2026</span><span>On-Site · Egypt</span></div><ul class="exp-bullets"><li>Built and shipped production iOS applications using Swift, SwiftUI, UIKit, Combine, MVVM-C, and Coordinator</li><li>Developed real-time features including live chat, GPS tracking, live auctions, push notifications, and live updates using Socket.IO and Firebase</li><li>Integrated multiple payment gateways including MyFatoorah, HyperPay, Apple Pay, PayTabs, Moyasar, and Telr</li><li>Refactored legacy modules into MVVM-C and Clean Architecture, improving maintainability and accelerating feature development</li><li>Optimized application performance, memory usage, and launch time for smooth App Store releases</li><li>Awarded Employee of the Month — August &amp; September 2023</li></ul></div></div>
                 <div class="exp-panel" id="nationtech"><div class="exp-card"><h3>iOS Engineer</h3><div class="co-name">NationTech</div><div class="meta"><span>Dec 2022 – Mar 2023</span><span>On-Site · Sheikh Zayed, Giza, Egypt</span></div><ul class="exp-bullets"><li>Contributed to AWSS, a large-scale e-commerce platform for food, groceries, and electronics</li><li>Built reactive application flows using RxSwift, RxCocoa, and MVVM architecture</li><li>Collaborated with cross-functional teams to deliver scalable, maintainable, and production-ready features</li></ul></div></div>
                 <div class="exp-panel" id="algorezmi"><div class="exp-card"><h3>iOS Engineer</h3><div class="co-name">Algorezmi</div><div class="meta"><span>Jan 2022 – Nov 2022</span><span>Remote · London, UK</span></div><ul class="exp-bullets"><li>Developed Global-M, a live media streaming platform for news and sports</li><li>Built the entire user interface programmatically using UIKit and VIPER architecture without Storyboards</li><li>Implemented low-latency live streaming using the SRT protocol and AVFoundation</li><li>Collaborated remotely with distributed teams to deliver high-quality production features</li></ul></div></div>
       </div>
@@ -680,9 +768,9 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
 
 <section id="projects">
   <div class="section-inner">
-    <span class="section-label fade-up"><span class="line"></span> Projects</span>
-    <h2 class="section-title fade-up">Apps <strong>I've built</strong></h2>
-    <p class="section-sub fade-up">Production iOS applications spanning healthcare, FinTech, marketplaces, delivery &amp; media streaming.</p>
+    <span class="section-label fade-up"><span class="line"></span> <span id="proj-label">Projects</span></span>
+    <h2 class="section-title fade-up" id="proj-title">Apps <strong>I've built</strong></h2>
+    <p class="section-sub fade-up" id="proj-sub">Production iOS applications spanning healthcare, FinTech, marketplaces, delivery &amp; media streaming.</p>
     <div class="projects-grid">
       <div class="proj-card fade-up" data-app="homemaint"><div class="proj-top"><div class="proj-icon" style="background:transparent;padding:0;overflow:hidden"><img src="assets/homemaint-icon.png" loading="lazy" alt="My Home Maintenance" style="width:100%;height:100%;object-fit:cover;border-radius:14px"></div><span class="badge badge-live">Live</span></div><div class="proj-body"><h3>My Home Maintenance</h3><div class="proj-company">Awamer Alshabaka (AAIT) · صيانة منزلي</div><p>Digital home maintenance platform for instant and scheduled plumbing &amp; electrical services — with direct price negotiation between customers and technicians.</p><div class="proj-tech"><span>SwiftUI</span><span>MVVM-C</span><span>Observation</span><span>Combine</span><span>Socket.IO</span><span>HyperPay</span></div><div class="proj-links"><a href="https://apps.apple.com/us/app/%D8%B5%D9%8A%D8%A7%D9%86%D8%A9-%D9%85%D9%86%D8%B2%D9%84%D9%89/id6763056852" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>User</a><a href="https://apps.apple.com/us/app/%D8%B5%D9%8A%D8%A7%D9%86%D8%A9-%D9%85%D9%86%D8%B2%D9%84%D9%89-%D9%85%D9%82%D8%AF%D9%85-%D8%AE%D8%AF%D9%85%D8%A9/id6763080645" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Provider</a></div><button type="button" class="proj-view-btn" onclick="openAppModal('homemaint', event)">Explore App</button></div></div>
       <div class="proj-card fade-up" data-app="osr"><div class="proj-top"><div class="proj-icon" style="background:transparent;padding:0;overflow:hidden"><img src="assets/osr-icon.png" loading="lazy" alt="OSR" style="width:100%;height:100%;object-fit:cover;border-radius:14px"></div><span class="badge badge-live">Live</span></div><div class="proj-body"><h3>OSR</h3><div class="proj-company">Awamer Alshabaka (AAIT) · أسر</div><p>Three-app marketplace ecosystem — customers order from productive families, providers manage offerings, and drivers fulfill deliveries with live tracking and Moyasar payments.</p><div class="proj-tech"><span>SwiftUI</span><span>MVVM-C</span><span>Observation</span><span>Combine</span><span>Socket.IO</span><span>Moyasar</span></div><div class="proj-links"><a href="https://apps.apple.com/us/app/osr/id6766071481" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>User</a><a href="https://apps.apple.com/us/app/osr-provider/id6766072475" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Provider</a><a href="https://apps.apple.com/us/app/osr-delegate/id6766073658" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Driver</a></div><button type="button" class="proj-view-btn" onclick="openAppModal('osr', event)">Explore App</button></div></div>
@@ -1082,58 +1170,58 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
 
 <section id="skills">
   <div class="section-inner">
-    <span class="section-label fade-up"><span class="line"></span> Skills & Technologies</span>
-    <h2 class="section-title fade-up">My <strong>technical toolkit</strong></h2>
-    <p class="section-sub fade-up">A comprehensive skill set honed across 4+ years and 15+ production iOS applications.</p>
+    <span class="section-label fade-up"><span class="line"></span> <span id="skills-label">Skills & Technologies</span></span>
+    <h2 class="section-title fade-up" id="skills-title">My <strong>technical toolkit</strong></h2>
+    <p class="section-sub fade-up" id="skills-sub">A comprehensive skill set honed across 4+ years and 15+ production iOS applications.</p>
         <div class="skills-grid">
-      <div class="skill-card fade-up"><div class="sk-icon">💻</div><div class="sk-title">Languages</div><div class="sk-tags"><span class="sk-tag">Swift</span><span class="sk-tag">Objective-C</span></div></div>
-      <div class="skill-card fade-up"><div class="sk-icon">🎨</div><div class="sk-title">UI Frameworks</div><div class="sk-tags"><span class="sk-tag">SwiftUI</span><span class="sk-tag">UIKit</span></div></div>
-      <div class="skill-card fade-up"><div class="sk-icon">🏗️</div><div class="sk-title">Architecture</div><div class="sk-tags"><span class="sk-tag">MVVM-C</span><span class="sk-tag">Clean Architecture</span><span class="sk-tag">VIPER</span><span class="sk-tag">Coordinator</span><span class="sk-tag">Dependency Injection</span><span class="sk-tag">Modular Architecture</span><span class="sk-tag">MVC</span></div></div>
-      <div class="skill-card fade-up"><div class="sk-icon">⚡</div><div class="sk-title">Concurrency</div><div class="sk-tags"><span class="sk-tag">Swift Concurrency</span><span class="sk-tag">Combine</span><span class="sk-tag">GCD</span><span class="sk-tag">OperationQueue</span></div></div>
-      <div class="skill-card fade-up"><div class="sk-icon">🔌</div><div class="sk-title">Networking &amp; Real-Time</div><div class="sk-tags"><span class="sk-tag">URLSession</span><span class="sk-tag">REST APIs</span><span class="sk-tag">Alamofire</span><span class="sk-tag">Moya</span><span class="sk-tag">Socket.IO</span></div></div>
-      <div class="skill-card fade-up"><div class="sk-icon">💾</div><div class="sk-title">Persistence</div><div class="sk-tags"><span class="sk-tag">Core Data</span><span class="sk-tag">Realm</span><span class="sk-tag">Firebase Firestore</span><span class="sk-tag">Firebase Realtime</span><span class="sk-tag">UserDefaults</span></div></div>
-      <div class="skill-card fade-up"><div class="sk-icon">💳</div><div class="sk-title">Payments</div><div class="sk-tags"><span class="sk-tag">Apple Pay</span><span class="sk-tag">MyFatoorah</span><span class="sk-tag">HyperPay</span><span class="sk-tag">PayTabs</span><span class="sk-tag">Moyasar</span><span class="sk-tag">Telr</span></div></div>
-      <div class="skill-card fade-up"><div class="sk-icon">📡</div><div class="sk-title">SDKs &amp; Frameworks</div><div class="sk-tags"><span class="sk-tag">AVFoundation</span><span class="sk-tag">CoreLocation</span><span class="sk-tag">MapKit</span><span class="sk-tag">Google Maps SDK</span><span class="sk-tag">Firebase SDK</span><span class="sk-tag">OpenTalk SDK</span></div></div>
-      <div class="skill-card fade-up"><div class="sk-icon">🛠️</div><div class="sk-title">Tools</div><div class="sk-tags"><span class="sk-tag">Xcode</span><span class="sk-tag">Git</span><span class="sk-tag">GitHub</span><span class="sk-tag">GitLab</span><span class="sk-tag">Jira</span><span class="sk-tag">Postman</span><span class="sk-tag">Figma</span><span class="sk-tag">App Store Connect</span><span class="sk-tag">TestFlight</span><span class="sk-tag">Fastlane</span><span class="sk-tag">GitHub Actions</span><span class="sk-tag">SPM</span><span class="sk-tag">CocoaPods</span></div></div>
-      <div class="skill-card fade-up"><div class="sk-icon">🤖</div><div class="sk-title">AI-Assisted Development</div><div class="sk-tags"><span class="sk-tag">GitHub Copilot</span><span class="sk-tag">Claude Code</span><span class="sk-tag">Cursor</span><span class="sk-tag">Codex</span><span class="sk-tag">Gemini</span><span class="sk-tag">MCP</span></div></div>
+      <div class="skill-card fade-up"><div class="sk-icon">💻</div><div class="sk-title" id="sk-languages">Languages</div><div class="sk-tags"><span class="sk-tag">Swift</span><span class="sk-tag">Objective-C</span></div></div>
+      <div class="skill-card fade-up"><div class="sk-icon">🎨</div><div class="sk-title" id="sk-ui">UI Frameworks</div><div class="sk-tags"><span class="sk-tag">SwiftUI</span><span class="sk-tag">UIKit</span></div></div>
+      <div class="skill-card fade-up"><div class="sk-icon">🏗️</div><div class="sk-title" id="sk-arch">Architecture</div><div class="sk-tags"><span class="sk-tag">MVVM-C</span><span class="sk-tag">Clean Architecture</span><span class="sk-tag">VIPER</span><span class="sk-tag">Coordinator</span><span class="sk-tag">Dependency Injection</span><span class="sk-tag">Modular Architecture</span><span class="sk-tag">MVC</span></div></div>
+      <div class="skill-card fade-up"><div class="sk-icon">⚡</div><div class="sk-title" id="sk-concurrency">Concurrency</div><div class="sk-tags"><span class="sk-tag">Swift Concurrency</span><span class="sk-tag">Combine</span><span class="sk-tag">GCD</span><span class="sk-tag">OperationQueue</span></div></div>
+      <div class="skill-card fade-up"><div class="sk-icon">🔌</div><div class="sk-title" id="sk-networking">Networking &amp; Real-Time</div><div class="sk-tags"><span class="sk-tag">URLSession</span><span class="sk-tag">REST APIs</span><span class="sk-tag">Alamofire</span><span class="sk-tag">Moya</span><span class="sk-tag">Socket.IO</span></div></div>
+      <div class="skill-card fade-up"><div class="sk-icon">💾</div><div class="sk-title" id="sk-persistence">Persistence</div><div class="sk-tags"><span class="sk-tag">Core Data</span><span class="sk-tag">Realm</span><span class="sk-tag">Firebase Firestore</span><span class="sk-tag">Firebase Realtime</span><span class="sk-tag">UserDefaults</span></div></div>
+      <div class="skill-card fade-up"><div class="sk-icon">💳</div><div class="sk-title" id="sk-payments">Payments</div><div class="sk-tags"><span class="sk-tag">Apple Pay</span><span class="sk-tag">MyFatoorah</span><span class="sk-tag">HyperPay</span><span class="sk-tag">PayTabs</span><span class="sk-tag">Moyasar</span><span class="sk-tag">Telr</span></div></div>
+      <div class="skill-card fade-up"><div class="sk-icon">📡</div><div class="sk-title" id="sk-sdks">SDKs &amp; Frameworks</div><div class="sk-tags"><span class="sk-tag">AVFoundation</span><span class="sk-tag">CoreLocation</span><span class="sk-tag">MapKit</span><span class="sk-tag">Google Maps SDK</span><span class="sk-tag">Firebase SDK</span><span class="sk-tag">OpenTalk SDK</span></div></div>
+      <div class="skill-card fade-up"><div class="sk-icon">🛠️</div><div class="sk-title" id="sk-tools">Tools</div><div class="sk-tags"><span class="sk-tag">Xcode</span><span class="sk-tag">Git</span><span class="sk-tag">GitHub</span><span class="sk-tag">GitLab</span><span class="sk-tag">Jira</span><span class="sk-tag">Postman</span><span class="sk-tag">Figma</span><span class="sk-tag">App Store Connect</span><span class="sk-tag">TestFlight</span><span class="sk-tag">Fastlane</span><span class="sk-tag">GitHub Actions</span><span class="sk-tag">SPM</span><span class="sk-tag">CocoaPods</span></div></div>
+      <div class="skill-card fade-up"><div class="sk-icon">🤖</div><div class="sk-title" id="sk-ai">AI-Assisted Development</div><div class="sk-tags"><span class="sk-tag">GitHub Copilot</span><span class="sk-tag">Claude Code</span><span class="sk-tag">Cursor</span><span class="sk-tag">Codex</span><span class="sk-tag">Gemini</span><span class="sk-tag">MCP</span></div></div>
     </div></div>
 </section>
 
 <!-- EDUCATION -->
 <section id="education" style="background:var(--bg-2)">
   <div class="section-inner">
-    <span class="section-label fade-up"><span class="line"></span> Education</span>
-    <h2 class="section-title fade-up">Academic <strong>Background</strong></h2>
-    <p class="section-sub fade-up">Formal education in computer science and information systems management.</p>
+    <span class="section-label fade-up"><span class="line"></span> <span id="edu-label">Education</span></span>
+    <h2 class="section-title fade-up" id="edu-title">Academic <strong>Background</strong></h2>
+    <p class="section-sub fade-up" id="edu-sub">Formal education in computer science and information systems management.</p>
     <div class="edu-grid">
       <div class="edu-card fade-up">
         <div class="edu-cert-wrap">
           <img src="assets/img-041.jpg" loading="lazy" alt="Cairo University Diploma">
-          <div class="edu-cert-overlay">View Certificate</div>
+          <div class="edu-cert-overlay" id="edu-view-cert">View Certificate</div>
         </div>
         <div class="edu-body">
-          <div class="edu-badge">🎓 Graduate Diploma</div>
-          <h3>Diploma in Computer Science</h3>
-          <div class="edu-school">Cairo University</div>
-          <div class="edu-faculty">Faculty of Graduate Studies for Statistical Research</div>
+          <div class="edu-badge" id="edu-grad">🎓 Graduate Diploma</div>
+          <h3 id="edu-dip-title">Diploma in Computer Science</h3>
+          <div class="edu-school" id="edu-dip-school">Cairo University</div>
+          <div class="edu-faculty" id="edu-dip-faculty">Faculty of Graduate Studies for Statistical Research</div>
           <div class="edu-meta-row">
-            <div class="edu-meta-item"><div class="edu-meta-label">Grade</div><div class="edu-meta-val">Very Good</div></div>
-            <div class="edu-meta-item"><div class="edu-meta-label">Year</div><div class="edu-meta-val">2020 / 2021</div></div>
-            <div class="edu-meta-item"><div class="edu-meta-label">Location</div><div class="edu-meta-val">Cairo, Egypt</div></div>
+            <div class="edu-meta-item"><div class="edu-meta-label" id="edu-grade-lbl">Grade</div><div class="edu-meta-val" id="edu-grade-val">Very Good</div></div>
+            <div class="edu-meta-item"><div class="edu-meta-label" id="edu-year-lbl">Year</div><div class="edu-meta-val">2020 / 2021</div></div>
+            <div class="edu-meta-item"><div class="edu-meta-label" id="edu-loc-lbl">Location</div><div class="edu-meta-val">Cairo, Egypt</div></div>
           </div>
         </div>
       </div>
       <div class="edu-card fade-up" style="background:var(--bg)">
         <div class="edu-body" style="padding:36px">
-          <div class="edu-badge">📘 Bachelor's Degree</div>
-          <h3>B.Sc. Information Systems Management</h3>
-          <div class="edu-school">H.I.T.C.H</div>
-          <div class="edu-faculty">Higher Institute — Alexandria</div>
+          <div class="edu-badge" id="edu-bachelor">📘 Bachelor's Degree</div>
+          <h3 id="edu-bsc-title">B.Sc. Information Systems Management</h3>
+          <div class="edu-school" id="edu-bsc-school">H.I.T.C.H</div>
+          <div class="edu-faculty" id="edu-bsc-faculty">Higher Institute — Alexandria</div>
           <div class="edu-meta-row">
-            <div class="edu-meta-item"><div class="edu-meta-label">Period</div><div class="edu-meta-val">2013 – 2017</div></div>
-            <div class="edu-meta-item"><div class="edu-meta-label">Location</div><div class="edu-meta-val">Alexandria, Egypt</div></div>
+            <div class="edu-meta-item"><div class="edu-meta-label" id="edu-period-lbl">Period</div><div class="edu-meta-val">2013 – 2017</div></div>
+            <div class="edu-meta-item"><div class="edu-meta-label" id="edu-loc-lbl2">Location</div><div class="edu-meta-val">Alexandria, Egypt</div></div>
           </div>
-          <div class="edu-desc"><p>Studied core fundamentals of information systems, database management, software engineering, and project management across a 4-year program.</p></div>
+          <div class="edu-desc"><p id="edu-bsc-desc">Studied core fundamentals of information systems, database management, software engineering, and project management across a 4-year program.</p></div>
         </div>
       </div>
     </div>
@@ -1143,16 +1231,16 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
 <!-- CERTIFICATES -->
 <section id="certificates">
   <div class="section-inner">
-    <span class="section-label fade-up"><span class="line"></span> Achievements</span>
-    <h2 class="section-title fade-up">Employee of <strong>The Month</strong></h2>
-    <p class="section-sub fade-up">Recognized twice for diligence and continuous development at Awamer Alshabaka (AAIT).</p>
+    <span class="section-label fade-up"><span class="line"></span> <span id="awards-label">Achievements</span></span>
+    <h2 class="section-title fade-up" id="awards-title">Employee of <strong>The Month</strong></h2>
+    <p class="section-sub fade-up" id="awards-sub">Recognized twice for diligence and continuous development at Awamer Alshabaka (AAIT).</p>
     <div class="cert-grid">
       <div class="cert-card fade-up">
         <div class="cert-img-wrap"><img src="assets/img-042.jpg" loading="lazy" alt="Employee of the Month August 2023"></div>
         <div class="cert-info">
           <div class="cert-month"><span class="dot"></span> August 2023</div>
-          <h4>Employee of The Month</h4>
-          <p>Recognized for diligence &amp; continuous development in the iOS Engineer Department.</p>
+          <h4 id="award-title">Employee of The Month</h4>
+          <p id="award-desc">Recognized for diligence &amp; continuous development in the iOS Engineer Department.</p>
           <div class="cert-footer"><span class="cert-company">Awamer Alshabaka (AAIT)</span><span class="cert-year">AUG 2023</span></div>
         </div>
       </div>
@@ -1160,8 +1248,8 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
         <div class="cert-img-wrap"><img src="assets/img-043.jpg" loading="lazy" alt="Employee of the Month September 2023"></div>
         <div class="cert-info">
           <div class="cert-month"><span class="dot"></span> September 2023</div>
-          <h4>Employee of The Month</h4>
-          <p>Recognized for diligence &amp; continuous development in the iOS Engineer Department.</p>
+          <h4 class="award-title-2">Employee of The Month</h4>
+          <p class="award-desc-2">Recognized for diligence &amp; continuous development in the iOS Engineer Department.</p>
           <div class="cert-footer"><span class="cert-company">Awamer Alshabaka (AAIT)</span><span class="cert-year">SEP 2023</span></div>
         </div>
       </div>
@@ -1173,33 +1261,32 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-inner">
-    <span class="section-label fade-up"><span class="line"></span> Get in Touch</span>
-    <h2 class="section-title fade-up">Let's build <strong>something great</strong></h2>
-    <p class="section-sub fade-up">Have a project in mind or an opportunity to discuss? I'd love to hear from you.</p>
+    <span class="section-label fade-up"><span class="line"></span> <span id="contact-label">Get in Touch</span></span>
+    <h2 class="section-title fade-up" id="contact-title">Let's build <strong>something great</strong></h2>
+    <p class="section-sub fade-up" id="contact-sub">Have a project in mind or an opportunity to discuss? I'd love to hear from you.</p>
     <div class="contact-grid fade-up">
       <div>
-        <div class="contact-intro"><h3>Contact Information</h3><p>Feel free to reach out through any channel. I typically respond within 24 hours.</p></div>
-        <div class="contact-item"><div class="c-icon">📧</div><div><div class="c-label">Email</div><div class="c-val"><a href="mailto:mohamedabdelhamed382@gmail.com">mohamedabdelhamed382@gmail.com</a></div></div></div>
-        <div class="contact-item"><div class="c-icon">📱</div><div><div class="c-label">Phone</div><div class="c-val"><a href="tel:+201229680487">+20 122 968 0487</a></div></div></div>
-        <div class="contact-item"><div class="c-icon">💼</div><div><div class="c-label">LinkedIn</div><div class="c-val"><a href="https://www.linkedin.com/in/mohamed-abdelhamed-ahmed/" target="_blank">LinkedIn</a></div></div></div>
-        <div class="contact-item"><div class="c-icon">🐙</div><div><div class="c-label">GitHub</div><div class="c-val"><a href="https://github.com/Mohamedabdelhamed382" target="_blank">Mohamedabdelhamed382</a></div></div></div>
-                <div class="contact-item"><div class="c-icon">💬</div><div><div class="c-label">WhatsApp</div><div class="c-val"><a href="https://wa.me/201229680487" target="_blank">WhatsApp</a></div></div></div>
-        <div class="contact-item"><div class="c-icon">▶️</div><div><div class="c-label">YouTube</div><div class="c-val"><a href="https://www.youtube.com/@MohamedAbdelhamedTech" target="_blank">Mohamed Abdelhamed Tech</a></div></div></div>
-        <div class="contact-item"><div class="c-icon">📍</div><div><div class="c-label">Location</div><div class="c-val">Cairo, Egypt</div></div></div>
+        <div class="contact-intro"><h3 id="contact-info-title">Contact Information</h3><p id="contact-info-desc">Feel free to reach out through any channel. I typically respond within 24 hours.</p></div>
+        <div class="contact-item"><div class="c-icon">📧</div><div><div class="c-label" id="c-email">Email</div><div class="c-val"><a href="mailto:mohamedabdelhamed382@gmail.com" class="c-ltr">mohamedabdelhamed382@gmail.com</a></div></div></div>
+        <div class="contact-item"><div class="c-icon">📱</div><div><div class="c-label" id="c-phone">Phone</div><div class="c-val"><a href="tel:+201229680487" class="c-ltr">+20 122 968 0487</a></div></div></div>
+        <div class="contact-item"><div class="c-icon">💼</div><div><div class="c-label" id="c-linkedin">LinkedIn</div><div class="c-val"><a href="https://www.linkedin.com/in/mohamed-abdelhamed-ahmed/" target="_blank" id="c-linkedin-val">LinkedIn</a></div></div></div>
+        <div class="contact-item"><div class="c-icon">🐙</div><div><div class="c-label" id="c-github">GitHub</div><div class="c-val"><a href="https://github.com/Mohamedabdelhamed382" target="_blank" class="c-ltr" id="c-github-val">Mohamedabdelhamed382</a></div></div></div>
+        <div class="contact-item"><div class="c-icon">💬</div><div><div class="c-label" id="c-whatsapp">WhatsApp</div><div class="c-val"><a href="https://wa.me/201229680487" target="_blank" id="c-whatsapp-val">WhatsApp</a></div></div></div>
+        <div class="contact-item"><div class="c-icon">▶️</div><div><div class="c-label" id="c-youtube">YouTube</div><div class="c-val"><a href="https://www.youtube.com/@MohamedAbdelhamedTech" target="_blank" id="c-youtube-val">Mohamed Abdelhamed Tech</a></div></div></div>
       </div>
       <form class="contact-form" id="contactForm" action="https://formsubmit.co/mohamedabdelhamed382@gmail.com" method="POST">
         <div class="form-row">
-          <div class="form-group"><label>Name</label><input type="text" name="name" placeholder="Your name" required></div>
-          <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@example.com" required></div>
+          <div class="form-group"><label id="form-name">Name</label><input type="text" name="name" id="form-name-input" placeholder="Your name" required></div>
+          <div class="form-group"><label id="form-email">Email</label><input type="email" name="email" id="form-email-input" placeholder="you@example.com" required></div>
         </div>
-        <div class="form-group"><label>Subject</label><input type="text" name="subject" placeholder="Project inquiry / Opportunity"></div>
-        <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell me about your project..." required></textarea></div>
+        <div class="form-group"><label id="form-subject">Subject</label><input type="text" name="subject" id="form-subject-input" placeholder="Project inquiry / Opportunity"></div>
+        <div class="form-group"><label id="form-message">Message</label><textarea name="message" id="form-message-input" placeholder="Tell me about your project..." required></textarea></div>
         <input type="hidden" name="_subject" value="New message from portfolio">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
         <button type="submit" class="form-btn" id="formBtn">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          Send Message
+          <span id="form-send">Send Message</span>
         </button>
         <div class="form-success" id="formSuccess">✅ Message sent! I'll get back to you soon.</div>
       </form>
@@ -1209,7 +1296,7 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
 
 <footer>
   <div class="footer-logo">M<em>.</em>AbdElhamed</div>
-  <p>© 2026 Mohamed AbdElhamed · iOS Engineer</p>
+  <p id="footer-tag">© 2026 Mohamed AbdElhamed · Senior iOS Engineer</p>
   <div class="footer-links">
     <a href="https://www.linkedin.com/in/mohamed-abdelhamed-ahmed/" target="_blank">LinkedIn</a>
     <a href="https://github.com/Mohamedabdelhamed382" target="_blank">GitHub</a>
@@ -1251,9 +1338,10 @@ footer p{font-size:.74rem;color:var(--text-3);font-family:var(--mono)}
     </div>
     <button type="button" class="lightbox-nav lightbox-next" id="lbNextBtn" onclick="lbNext()" aria-label="Next">›</button>
   </div>
-  <div class="lightbox-hint">Scroll if needed · Arrow keys or swipe to browse · Esc to close</div>
+  <div class="lightbox-hint" id="lb-hint">Scroll if needed · Arrow keys or swipe to browse · Esc to close</div>
 </div>
 
+<script src="assets/i18n.js"></script>
 <script>
 const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
 if(cursor&&ring){let mx=0,my=0,rx=0,ry=0;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px'});(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a)})()}
@@ -1273,11 +1361,12 @@ document.querySelectorAll('.exp-nav-item').forEach(item=>{
 });
 const form=document.getElementById('contactForm'),success=document.getElementById('formSuccess'),btn=document.getElementById('formBtn');
 form.addEventListener('submit',async e=>{
-  e.preventDefault();btn.textContent='Sending...';btn.disabled=true;
+  e.preventDefault();const L=PORTFOLIO_I18N[portfolioLang].contact;
+  btn.textContent=L.sending;btn.disabled=true;
   try{const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
-    if(res.ok){form.reset();success.style.display='block';btn.textContent='Message Sent ✓';}
-    else{btn.textContent='Error — email me directly';btn.disabled=false;}}
-  catch{btn.textContent='Error — email me directly';btn.disabled=false;}
+    if(res.ok){form.reset();success.style.display='block';btn.textContent=L.sent;}
+    else{btn.textContent=L.error;btn.disabled=false;}}
+  catch{btn.textContent=L.error;btn.disabled=false;}
 });
 function storyTab(tab, el) {
   document.querySelectorAll('.story-tab').forEach(t=>t.classList.remove('active'));
@@ -1288,84 +1377,41 @@ function storyTab(tab, el) {
 
 /* ── APP MODAL ── */
 function getAppData(appKey) {
-  const defs = {
-    homemaint: {
-      title: 'My Home Maintenance',
-      sub: 'صيانة منزلي · Awamer Alshabaka (AAIT)',
-      iconId: '#homemaint-story .story-app-icon img',
-      tabs: [
-        { label: '🏠 User App', panelId: 'story-homemaint-user' },
-        { label: '🔧 Provider App', panelId: 'story-homemaint-provider' }
-      ]
-    },
-    osr: {
-      title: 'OSR',
-      sub: 'أسر · Awamer Alshabaka (AAIT)',
-      iconId: '#osr-story .story-app-icon img',
-      tabs: [
-        { label: '🛒 User App', panelId: 'story-osr-user' },
-        { label: '🏪 Provider App', panelId: 'story-osr-provider' },
-        { label: '🚗 Driver App', panelId: 'story-osr-driver' }
-      ]
-    },
-    souqhouta: {
-      title: 'Souq Al Houta',
-      sub: 'سوق الحوطة · 60K+ Users',
-      iconId: '#souqhouta-story .story-app-icon img',
-      tabs: [
-        { label: '🛒 App', panelId: 'story-souqhouta' }
-      ]
-    },
-    muakad: {
-      title: 'Muakad',
-      sub: 'Awamer Alshabaka (AAIT) · Healthcare',
-      iconId: '#muakad-story .story-app-icon img',
-      tabs: [
-        { label: '🧑‍⚕️ Patient App', panelId: 'story-muakad-user' },
-        { label: '👨‍⚕️ Doctor App', panelId: 'story-muakad-doctor' }
-      ]
-    },
-    globalm: {
-      title: 'GlobalM',
-      sub: 'Algorezmi · Live Media Streaming',
-      iconId: '#globalm-story .story-app-icon img',
-      tabs: [
-        { label: '📺 App', panelId: 'story-globalm' }
-      ]
-    },
-    mehanti: {
-      title: 'Mehanti Bedi',
-      sub: 'Awamer Alshabaka (AAIT) · Home Services',
-      iconId: '#mehanti-story .story-app-icon img',
-      tabs: [
-        { label: '🔧 App', panelId: 'story-mehanti' }
-      ]
-    },
-    laser: {
-      title: 'Laser Home',
-      sub: 'Awamer Alshabaka (AAIT) · Beauty & Skincare',
-      iconId: '#laser-story .story-app-icon img',
-      tabs: [
-        { label: '🧴 User App', panelId: 'story-laser-user' },
-        { label: '💆 Specialists', panelId: 'story-laser-spec' }
-      ]
-    }
+  const panelMap = {
+    homemaint: ['story-homemaint-user', 'story-homemaint-provider'],
+    osr: ['story-osr-user', 'story-osr-provider', 'story-osr-driver'],
+    souqhouta: ['story-souqhouta'],
+    muakad: ['story-muakad-user', 'story-muakad-doctor'],
+    globalm: ['story-globalm'],
+    mehanti: ['story-mehanti'],
+    laser: ['story-laser-user', 'story-laser-spec']
   };
-  const def = defs[appKey];
-  if (!def) return null;
+  const iconMap = {
+    homemaint: '#homemaint-story .story-app-icon img',
+    osr: '#osr-story .story-app-icon img',
+    souqhouta: '#souqhouta-story .story-app-icon img',
+    muakad: '#muakad-story .story-app-icon img',
+    globalm: '#globalm-story .story-app-icon img',
+    mehanti: '#mehanti-story .story-app-icon img',
+    laser: '#laser-story .story-app-icon img'
+  };
+  const L = PORTFOLIO_I18N[portfolioLang]?.apps?.[appKey];
+  const panels = panelMap[appKey];
+  if (!L || !panels) return null;
   return {
-    title: def.title,
-    sub: def.sub,
-    icon: document.querySelector(def.iconId)?.src || '',
-    tabs: def.tabs.map(t => ({
-      label: t.label,
-      content: document.getElementById(t.panelId)?.innerHTML || ''
+    title: L.title,
+    sub: L.sub,
+    icon: document.querySelector(iconMap[appKey])?.src || '',
+    tabs: panels.map((panelId, i) => ({
+      label: L.tabs[i] || '',
+      content: document.getElementById(panelId)?.innerHTML || ''
     }))
   };
 }
 
 function openAppModal(appKey, evt) {
   if (evt) { evt.preventDefault(); evt.stopPropagation(); evt.currentTarget?.blur(); }
+  window._openAppKey = appKey;
   const overlay = document.getElementById('appModalOverlay');
   if (!overlay) return;
 
@@ -1417,6 +1463,7 @@ function switchModalTab(idx) {
 
 function closeModal() {
   closeLightbox();
+  window._openAppKey = null;
   document.getElementById('appModalOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }
