@@ -1341,7 +1341,7 @@ html[dir="ltr"] .app-modal-body .ss-scroll-wrap::after{content:var(--ss-hint,"Ta
   <div class="lightbox-hint" id="lb-hint">Scroll if needed · Arrow keys or swipe to browse · Esc to close</div>
 </div>
 
-<script src="assets/i18n.js"></script>
+<script src="assets/i18n.js?v=20260705"></script>
 <script>
 const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
 if(cursor&&ring){let mx=0,my=0,rx=0,ry=0;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px'});(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a)})()}
