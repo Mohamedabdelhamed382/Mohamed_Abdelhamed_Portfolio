@@ -186,7 +186,7 @@ PORTFOLIO_I18N.ar.expPanels = {
 PORTFOLIO_I18N.en.expNav = { aait2: 'Jan 2026 - Present', aait1: 'Apr 2023 - Jan 2026', nationtech: 'Dec 2022 - Mar 2023', algorezmi: 'Jan 2022 - Nov 2022' };
 PORTFOLIO_I18N.ar.expNav = { aait2: '\u064a\u0646\u0627\u064a\u0631 2026 - \u0627\u0644\u0622\u0646', aait1: '\u0623\u0628\u0631\u064a\u0644 2023 - \u064a\u0646\u0627\u064a\u0631 2026', nationtech: '\u062f\u064a\u0633\u0645\u0628\u0631 2022 - \u0645\u0627\u0631\u0633 2023', algorezmi: '\u064a\u0646\u0627\u064a\u0631 2022 - \u0646\u0648\u0641\u0645\u0628\u0631 2022' };
 
-const PROJ_LINK_KEYS = { homemaint: ['user','provider'], aelm: ['student','teacher'], osr: ['user','provider','driver'], muakad: ['user','provider'], souqhouta: ['appStore'], laser: ['user','specialist'], mehanti: ['appStore'], globalm: ['appStore'] };
+const PROJ_LINK_KEYS = { homeexpress: ['appStore'], homemaint: ['user','provider'], aelm: ['student','teacher'], osr: ['user','provider','driver'], muakad: ['user','provider'], souqhouta: ['appStore'], laser: ['user','specialist'], mehanti: ['appStore'], globalm: ['appStore'] };
 
 const requestedPortfolioLang = new URLSearchParams(window.location.search).get('lang');
 let portfolioLang = requestedPortfolioLang === 'ar' || requestedPortfolioLang === 'en'
