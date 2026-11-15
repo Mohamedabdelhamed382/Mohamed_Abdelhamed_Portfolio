@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mohamedabdelhamed382.github.io/Mohamed_Abdelhamed_Portfolio/sitemap.xml

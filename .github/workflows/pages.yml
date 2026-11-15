@@ -27,7 +27,7 @@ jobs:
       - name: Prepare site artifact
         run: |
           mkdir -p _site
-          cp index.html .nojekyll _site/
+          cp index.html .nojekyll robots.txt sitemap.xml _site/
           cp -r assets _site/
 
       - name: Configure Pages

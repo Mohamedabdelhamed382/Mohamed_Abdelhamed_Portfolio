@@ -1,34 +1,40 @@
-# Mohamed AbdElhamed — iOS Engineer Portfolio
+# Mohamed AbdElhamed â€” Senior iOS Engineer Portfolio
 
-Personal portfolio site showcasing iOS engineering experience, production apps, and contact information.
+A bilingual Arabic/English portfolio showcasing Mohamed's iOS engineering experience, production applications, technical skills, education, and professional achievements.
 
 **Live site:** [mohamedabdelhamed382.github.io/Mohamed_Abdelhamed_Portfolio](https://mohamedabdelhamed382.github.io/Mohamed_Abdelhamed_Portfolio/)
 
-## Structure
+## Highlights
 
-```
-??? index.html          # Single-page portfolio (HTML, CSS, JS)
-??? assets/
-    ??? img-*.png/webp  # Project screenshots & profile photo
-    ??? Mohamed_AbdElhamed_iOS_Engineer_CV.pdf
+- 4+ years of professional iOS development experience
+- 15+ production applications serving 60K+ users
+- Swift, SwiftUI, UIKit, Combine, MVVM-C, Clean Architecture, and VIPER
+- Real-time communication, payments, GPS tracking, and media streaming
+- Responsive Arabic/English interface with detailed application showcases
+- SEO metadata, structured data, sitemap, and accessible navigation
+
+## Project structure
+
+```text
+index.html          # Single-page portfolio (HTML, CSS, and JavaScript)
+assets/             # Translations, screenshots, profile photo, and CV
+robots.txt          # Search crawler rules
+sitemap.xml         # Search engine sitemap
+.github/workflows/  # GitHub Pages deployment
 ```
 
 ## Local preview
-
-Open `index.html` in a browser, or serve locally:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Then visit `http://localhost:8080`.
+Then open [http://localhost:8080](http://localhost:8080).
 
-## Deploy (GitHub Pages)
+## Deployment
 
-1. Push to the `main` branch on GitHub.
-2. Go to **Settings ? Pages** and set source to **Deploy from branch ? main ? / (root)**.
-3. The site will be available at the URL above.
+Every push to `main` triggers the GitHub Actions workflow and deploys the static site to GitHub Pages.
 
 ## Contact form
 
-Messages are sent via [FormSubmit.co](https://formsubmit.co). The first submission triggers an email confirmation to activate the endpoint.
+Messages are sent through [FormSubmit.co](https://formsubmit.co). The endpoint must be activated from the confirmation email after its first submission.
