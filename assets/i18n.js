@@ -1,9 +1,9 @@
 /* Portfolio i18n - EN / AR */
 const PORTFOLIO_I18N = {
   en: {
-    meta: { title: 'Mohamed AbdElhamed - Software Engineer', description: 'Software engineer specialized in smart application development. 4+ years building 15+ production apps serving 60K+ users. Based in Cairo, Egypt.' },
+    meta: { title: 'Mohamed AbdElhamed - Senior iOS Engineer', description: 'Senior iOS Engineer with 4+ years of experience building 15+ production apps serving 60K+ users. Swift, SwiftUI, UIKit, and scalable mobile architecture.' },
     nav: { about: 'About', experience: 'Experience', projects: 'Projects', skills: 'Skills', education: 'Education', awards: 'Awards', contact: 'Contact', hire: 'Hire Me' },
-    hero: { eyebrow: 'OPEN TO WORK', role: 'Software Engineer specialized in Smart Apps', desc: 'Software engineer specialized in smart application development - 4+ years building 15+ production apps serving 60K+ users across AI, healthcare, FinTech, marketplaces, and media streaming.', viewProjects: 'View Projects', downloadCv: 'Download CV', getInTouch: 'Get in Touch', badge: 'OPEN TO WORK' },
+    hero: { eyebrow: 'OPEN TO WORK', role: 'Senior iOS Engineer', desc: 'Senior iOS Engineer with 4+ years of experience building 15+ production apps serving 60K+ users across healthcare, FinTech, marketplaces, and media streaming.', viewProjects: 'View Projects', downloadCv: 'Download CV', getInTouch: 'Get in Touch', badge: 'OPEN TO WORK' },
     about: {
       label: 'About Me',
       p1: 'Software engineer specialized in smart application development, with 4+ years of experience building and scaling production-grade iOS applications across AI, healthcare, FinTech, marketplaces, media streaming, and real-time systems.',
@@ -69,6 +69,12 @@ const PORTFOLIO_I18N = {
     }
   }
 };
+
+// Keep the public-facing role aligned with the current position.
+PORTFOLIO_I18N.ar.meta.title = 'محمد عبد الحميد - مهندس iOS أول';
+PORTFOLIO_I18N.ar.meta.description = 'مهندس iOS أول بخبرة تزيد عن 4 سنوات في بناء أكثر من 15 تطبيقًا إنتاجيًا يخدم أكثر من 60 ألف مستخدم.';
+PORTFOLIO_I18N.ar.hero.role = 'مهندس iOS أول';
+PORTFOLIO_I18N.ar.hero.desc = 'مهندس iOS أول بخبرة تزيد عن 4 سنوات في بناء أكثر من 15 تطبيقًا إنتاجيًا يخدم أكثر من 60 ألف مستخدم في الرعاية الصحية والتقنية المالية والأسواق وبث الوسائط.';
 
 PORTFOLIO_I18N.en.projCards = {
   homemaint: { company: 'Awamer Alshabaka (AAIT)', desc: 'Digital home maintenance platform for instant and scheduled plumbing and electrical services with direct price negotiation.' },
