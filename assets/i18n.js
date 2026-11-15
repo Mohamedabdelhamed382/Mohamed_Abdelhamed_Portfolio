@@ -25,7 +25,7 @@ const PORTFOLIO_I18N = {
     footer: { tag: '2026 Mohamed AbdElhamed - Software Engineer' },
     lightbox: { hint: 'Scroll if needed - Arrow keys or swipe to browse - Esc to close', ssHint: 'Tap any screenshot to view full size', ssHintMob: 'Tap to view full size - Swipe to browse' },
     apps: {
-      homeexpress: { title: 'HOME', sub: 'Home Express', tabs: ['Customer App'] },
+      homeexpress: { title: 'HOME', sub: 'Home Express', tabs: ['Customer App', 'Provider App'] },
       homemaint: { title: 'My Home Maintenance', sub: 'Home Services', tabs: ['User App', 'Provider App'] },
       osr: { title: 'OSR', sub: 'Productive Families Marketplace', tabs: ['User App', 'Provider App', 'Driver App'] },
       souqhouta: { title: 'Souq Al Houta', sub: '60K+ Users', tabs: ['App'] },
@@ -60,7 +60,7 @@ const PORTFOLIO_I18N = {
     footer: { tag: '2026 \u0645\u062d\u0645\u062f \u0639\u0628\u062f \u0627\u0644\u062d\u0645\u064a\u062f - \u0645\u0647\u0646\u062f\u0633 iOS \u0623\u0648\u0644' },
     lightbox: { hint: '\u0645\u0631\u0631 \u0639\u0646\u062f \u0627\u0644\u062d\u0627\u062c\u0629 - Esc \u0644\u0644\u0625\u063a\u0644\u0627\u0642', ssHint: '\u0627\u0636\u063a\u0637 \u0639\u0644\u0649 \u0644\u0642\u0637\u0629 \u0644\u0639\u0631\u0636\u0647\u0627 \u0628\u0627\u0644\u062d\u062c\u0645 \u0627\u0644\u0643\u0627\u0645\u0644', ssHintMob: '\u0627\u0636\u063a\u0637 \u0644\u0644\u0639\u0631\u0636 \u0628\u0627\u0644\u062d\u062c\u0645 \u0627\u0644\u0643\u0627\u0645\u0644' },
     apps: {
-      homeexpress: { title: '\u0647\u0648\u0645 | HOME', sub: '\u0647\u0648\u0645 \u0625\u0643\u0633\u0628\u0631\u064a\u0633', tabs: ['\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0639\u0645\u064a\u0644'] },
+      homeexpress: { title: '\u0647\u0648\u0645 | HOME', sub: '\u0647\u0648\u0645 \u0625\u0643\u0633\u0628\u0631\u064a\u0633', tabs: ['\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0639\u0645\u064a\u0644', '\u062a\u0637\u0628\u064a\u0642 \u0645\u0642\u062f\u0645 \u0627\u0644\u062e\u062f\u0645\u0629'] },
       homemaint: { title: '\u0635\u064a\u0627\u0646\u0629 \u0645\u0646\u0632\u0644\u064a', sub: '\u0623\u0648\u0627\u0645\u0631 \u0627\u0644\u0634\u0628\u0643\u0629', tabs: ['\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645', '\u0645\u0642\u062f\u0645 \u0627\u0644\u062e\u062f\u0645\u0629'] },
       osr: { title: '\u0623\u0633\u0631', sub: '\u0623\u0648\u0627\u0645\u0631 \u0627\u0644\u0634\u0628\u0643\u0629', tabs: ['\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645', '\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0645\u0632\u0648\u062f', '\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0633\u0627\u0626\u0642'] },
       souqhouta: { title: '\u0633\u0648\u0642 \u0627\u0644\u062d\u0648\u0637\u0629', sub: '60 \u0623\u0644\u0641+ \u0645\u0633\u062a\u062e\u062f\u0645', tabs: ['\u0627\u0644\u062a\u0637\u0628\u064a\u0642'] },
@@ -89,6 +89,10 @@ PORTFOLIO_I18N.ar.appDetails = {
   'story-homeexpress': {
     desc: ['<strong>هوم | HOME</strong> هو الحل الذكي لجميع احتياجات صيانة المنازل والمباني، ويربط العملاء بفنيين متخصصين في السباكة والكهرباء والتكييف والتنظيف وغيرها من الخدمات.', 'اختر الخدمة المناسبة، وحدد الموعد، واختر طريقة الدفع، ثم تابع طلبك بسهولة من مكان واحد.'],
     features: ['مجموعة واسعة من خدمات صيانة المنازل والمباني', 'تفاصيل واضحة للخدمة مع تحديد الكمية', 'اختيار مرن للتاريخ والفترة المناسبة', 'مراجعة الطلب مع أسعار واضحة', 'الدفع بالبطاقة أو المحفظة', 'تأكيد فوري للحجز ومتابعة حالة الطلب', 'تجربة عربية بسيطة وسهلة الاستخدام']
+  },
+  'story-homeexpress-provider': {
+    desc: ['<strong>هوم | Provider</strong> مصمم لمهنيي الصيانة ومقدمي الخدمات المنزلية لاستقبال طلبات العملاء وإدارة الأعمال ومتابعة تفاصيل كل خدمة من تطبيق واحد.', 'يمكن لمقدمي خدمات السباكة والكهرباء والتكييف والتنظيف وغيرها تنظيم وقتهم، ومتابعة حالة الطلبات، والتواصل مع العملاء، والوصول إلى فرص عمل جديدة في نطاق خدمتهم.'],
+    features: ['استقبال طلبات الصيانة المناسبة لتخصصك', 'عرض تفاصيل العميل والخدمة بوضوح', 'إدارة الأعمال الجديدة والجارية والمكتملة', 'متابعة حالة الطلب خلال جميع مراحله', 'التواصل مع العملاء بسهولة', 'تنظيم مواعيد العمل والتوفر اليومي', 'تنمية أعمالك من خلال فرص محلية جديدة']
   },
   'story-aelm': {
     desc: ['<strong>علم</strong> منصة تعليمية تساعد الطلاب على الوصول إلى المعلم المناسب والحصول على تجربة تعليمية شخصية تلائم مستواهم واحتياجاتهم الدراسية.', 'سواء كنت تحتاج إلى شرح مادة، أو تقوية مستواك، أو متابعة دراسية منتظمة، أو الاستعداد للاختبارات، يساعدك علم على التعلم مع نخبة من المعلمين من أي مكان.'],
@@ -186,7 +190,7 @@ PORTFOLIO_I18N.ar.expPanels = {
 PORTFOLIO_I18N.en.expNav = { aait2: 'Jan 2026 - Present', aait1: 'Apr 2023 - Jan 2026', nationtech: 'Dec 2022 - Mar 2023', algorezmi: 'Jan 2022 - Nov 2022' };
 PORTFOLIO_I18N.ar.expNav = { aait2: '\u064a\u0646\u0627\u064a\u0631 2026 - \u0627\u0644\u0622\u0646', aait1: '\u0623\u0628\u0631\u064a\u0644 2023 - \u064a\u0646\u0627\u064a\u0631 2026', nationtech: '\u062f\u064a\u0633\u0645\u0628\u0631 2022 - \u0645\u0627\u0631\u0633 2023', algorezmi: '\u064a\u0646\u0627\u064a\u0631 2022 - \u0646\u0648\u0641\u0645\u0628\u0631 2022' };
 
-const PROJ_LINK_KEYS = { homeexpress: ['appStore'], homemaint: ['user','provider'], aelm: ['student','teacher'], osr: ['user','provider','driver'], muakad: ['user','provider'], souqhouta: ['appStore'], laser: ['user','specialist'], mehanti: ['appStore'], globalm: ['appStore'] };
+const PROJ_LINK_KEYS = { homeexpress: ['user','provider'], homemaint: ['user','provider'], aelm: ['student','teacher'], osr: ['user','provider','driver'], muakad: ['user','provider'], souqhouta: ['appStore'], laser: ['user','specialist'], mehanti: ['appStore'], globalm: ['appStore'] };
 
 const requestedPortfolioLang = new URLSearchParams(window.location.search).get('lang');
 let portfolioLang = requestedPortfolioLang === 'ar' || requestedPortfolioLang === 'en'
