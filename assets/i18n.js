@@ -25,8 +25,8 @@ const PORTFOLIO_I18N = {
     footer: { tag: '2026 Mohamed AbdElhamed - Software Engineer' },
     lightbox: { hint: 'Scroll if needed - Arrow keys or swipe to browse - Esc to close', ssHint: 'Tap any screenshot to view full size', ssHintMob: 'Tap to view full size - Swipe to browse' },
     apps: {
-      homemaint: { title: 'My Home Maintenance', sub: 'Awamer Alshabaka (AAIT)', tabs: ['User App', 'Provider App'] },
-      osr: { title: 'OSR', sub: 'Awamer Alshabaka (AAIT)', tabs: ['User App', 'Provider App', 'Driver App'] },
+      homemaint: { title: 'My Home Maintenance', sub: 'Home Services', tabs: ['User App', 'Provider App'] },
+      osr: { title: 'OSR', sub: 'Productive Families Marketplace', tabs: ['User App', 'Provider App', 'Driver App'] },
       souqhouta: { title: 'Souq Al Houta', sub: '60K+ Users', tabs: ['App'] },
       muakad: { title: 'Muakad', sub: 'Healthcare', tabs: ['Patient App', 'Doctor App'] },
       globalm: { title: 'GlobalM', sub: 'Live Media Streaming', tabs: ['App'] },
@@ -75,6 +75,8 @@ PORTFOLIO_I18N.ar.meta.title = 'محمد عبد الحميد - مهندس iOS أ
 PORTFOLIO_I18N.ar.meta.description = 'مهندس iOS أول بخبرة تزيد عن 4 سنوات في بناء أكثر من 15 تطبيقًا إنتاجيًا يخدم أكثر من 60 ألف مستخدم.';
 PORTFOLIO_I18N.ar.hero.role = 'مهندس iOS أول';
 PORTFOLIO_I18N.ar.hero.desc = 'مهندس iOS أول بخبرة تزيد عن 4 سنوات في بناء أكثر من 15 تطبيقًا إنتاجيًا يخدم أكثر من 60 ألف مستخدم في الرعاية الصحية والتقنية المالية والأسواق وبث الوسائط.';
+PORTFOLIO_I18N.ar.apps.homemaint.sub = 'خدمات منزلية';
+PORTFOLIO_I18N.ar.apps.osr.sub = 'سوق الأسر المنتجة';
 PORTFOLIO_I18N.ar.appDetails = {
   'story-osr-user': {
     desc: ['<strong>أسر</strong> منصة رقمية تمكّن الأسر المنتجة من عرض وبيع منتجاتها، وتمنح العملاء تجربة سهلة لاكتشاف المنتجات المحلية وطلبها واستلامها.', 'يمكن للعملاء تصفح المنتجات وإضافتها إلى السلة، واختيار التوصيل أو الاستلام الذاتي، والدفع بأمان عبر Moyasar.'],
