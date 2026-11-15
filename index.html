@@ -1451,6 +1451,7 @@ function getAppData(appKey) {
     icon: document.querySelector(iconMap[appKey])?.src || '',
     tabs: panels.map((panelId, i) => ({
       label: L.tabs[i] || '',
+      icon: appKey === 'aelm' && panelId === 'story-aelm-teacher' ? 'assets/aelm-teacher-icon.png' : document.querySelector(iconMap[appKey])?.src || '',
       content: localizeAppPanel(panelId, document.getElementById(panelId)?.innerHTML || '')
     }))
   };
@@ -1506,6 +1507,7 @@ function openAppModal(appKey, evt) {
     tabBtn.type = 'button';
     tabBtn.className = 'app-modal-tab' + (i === 0 ? ' active' : '');
     tabBtn.textContent = tab.label;
+    tabBtn.dataset.icon = tab.icon || data.icon || '';
     tabBtn.onclick = () => switchModalTab(i);
     tabsEl.appendChild(tabBtn);
 
@@ -1524,8 +1526,12 @@ function openAppModal(appKey, evt) {
 function switchModalTab(idx) {
   const tabsEl = document.getElementById('modalTabs');
   const bodyEl = document.getElementById('modalBody');
+  const modalIcon = document.getElementById('modalIcon');
   if (!tabsEl || !bodyEl) return;
-  tabsEl.querySelectorAll('.app-modal-tab').forEach((t, i) => t.classList.toggle('active', i === idx));
+  tabsEl.querySelectorAll('.app-modal-tab').forEach((t, i) => {
+    t.classList.toggle('active', i === idx);
+    if (i === idx && modalIcon && t.dataset.icon) modalIcon.src = t.dataset.icon;
+  });
   bodyEl.querySelectorAll('.app-modal-panel').forEach((p, i) => p.classList.toggle('active', i === idx));
   bodyEl.scrollTop = 0;
 }
