@@ -29,6 +29,7 @@ const PORTFOLIO_I18N = {
       eco: { title: 'Eco Delivery', sub: 'Smart Delivery Ecosystem', tabs: ['Customer App', 'Provider App', 'Driver App'] },
       taltak: { title: 'Taltak', sub: 'Beauty & Creative Services', tabs: ['App'] },
       ekceer: { title: 'Ekceer', sub: 'Beauty & Healthcare Booking', tabs: ['App'] },
+      share3: { title: 'Share3', sub: 'Nearby Services Marketplace', tabs: ['App'] },
       homemaint: { title: 'My Home Maintenance', sub: 'Home Services', tabs: ['User App', 'Provider App'] },
       osr: { title: 'OSR', sub: 'Productive Families Marketplace', tabs: ['User App', 'Provider App', 'Driver App'] },
       souqhouta: { title: 'Souq Al Houta', sub: '60K+ Users', tabs: ['App'] },
@@ -67,6 +68,7 @@ const PORTFOLIO_I18N = {
       eco: { title: '\u0625\u064a\u0643\u0648 \u062f\u0644\u064a\u0641\u0631\u064a', sub: '\u0645\u0646\u0638\u0648\u0645\u0629 \u062a\u0648\u0635\u064a\u0644 \u0630\u0643\u064a\u0629', tabs: ['\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0639\u0645\u064a\u0644', '\u062a\u0637\u0628\u064a\u0642 \u0645\u0632\u0648\u062f \u0627\u0644\u062e\u062f\u0645\u0629', '\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0645\u0646\u062f\u0648\u0628'] },
       taltak: { title: 'طلتك', sub: 'خدمات الجمال والإبداع', tabs: ['التطبيق'] },
       ekceer: { title: 'إكسير', sub: 'حجز خدمات الجمال والرعاية الصحية', tabs: ['التطبيق'] },
+      share3: { title: 'شارع', sub: 'سوق الخدمات القريبة', tabs: ['التطبيق'] },
       homemaint: { title: '\u0635\u064a\u0627\u0646\u0629 \u0645\u0646\u0632\u0644\u064a', sub: '\u0623\u0648\u0627\u0645\u0631 \u0627\u0644\u0634\u0628\u0643\u0629', tabs: ['\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645', '\u0645\u0642\u062f\u0645 \u0627\u0644\u062e\u062f\u0645\u0629'] },
       osr: { title: '\u0623\u0633\u0631', sub: '\u0623\u0648\u0627\u0645\u0631 \u0627\u0644\u0634\u0628\u0643\u0629', tabs: ['\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645', '\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0645\u0632\u0648\u062f', '\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0633\u0627\u0626\u0642'] },
       souqhouta: { title: '\u0633\u0648\u0642 \u0627\u0644\u062d\u0648\u0637\u0629', sub: '60 \u0623\u0644\u0641+ \u0645\u0633\u062a\u062e\u062f\u0645', tabs: ['\u0627\u0644\u062a\u0637\u0628\u064a\u0642'] },
@@ -119,6 +121,10 @@ PORTFOLIO_I18N.ar.appDetails = {
   'story-ekceer': {
     desc: ['<strong>إكسير</strong> يساعد المستخدمين على اكتشاف خدمات وباقات الجمال والرعاية الصحية من العيادات القريبة أو حسب تفضيلاتهم.', 'يمكن للمستخدم مقارنة العيادات والأطباء واختيار الخدمة أو الباقة المناسبة وحجز موعد ثم تقييم تجربته بعد الزيارة.'],
     features: ['اكتشاف عيادات الجمال والرعاية الصحية القريبة', 'تصفح الخدمات والباقات المتاحة', 'اقتراح خيارات تناسب تفضيلات المستخدم', 'مقارنة العيادات والأطباء والعروض', 'حجز المواعيد مباشرة من التطبيق', 'إدارة الخدمات المفضلة من مكان واحد', 'تقييم الزيارات ومشاركة الرأي']
+  },
+  'story-share3': {
+    desc: ['<strong>شارع</strong> ينقل مزودي الخدمات القريبين إلى جوالك، فلا تحتاج إلى البحث في الشوارع عن فني أو مقدم خدمة.', 'يمكن للمستخدم استعراض مقدمي الخدمات على الخريطة ومعرفة الأقرب ومراجعة التقييمات والتجارب والتواصل مباشرة قبل اختيار خدمات الصيانة المنزلية أو المناسبات أو الخدمات العامة.'],
+    features: ['اكتشاف مقدمي الخدمات القريبين على الخريطة', 'الوصول إلى فنيي الكهرباء والسباكة والتكييف والنجارة والدهانات', 'خدمات تركيب الكاميرات وغيرها من التخصصات', 'مراجعة التقييمات وتجارب المستخدمين', 'التواصل المباشر مع الفنيين ومقدمي الخدمات', 'أقسام لخدمات المناسبات والطلاب والخدمات العامة', 'توفير الوقت بمقارنة الخيارات القريبة من المنزل']
   },
   'story-aelm': {
     desc: ['<strong>علم</strong> منصة تعليمية تساعد الطلاب على الوصول إلى المعلم المناسب والحصول على تجربة تعليمية شخصية تلائم مستواهم واحتياجاتهم الدراسية.', 'سواء كنت تحتاج إلى شرح مادة، أو تقوية مستواك، أو متابعة دراسية منتظمة، أو الاستعداد للاختبارات، يساعدك علم على التعلم مع نخبة من المعلمين من أي مكان.'],
@@ -184,6 +190,7 @@ PORTFOLIO_I18N.en.projCards = {
   eco: { company: '', desc: 'Smart, value-focused delivery ecosystem connecting customers, nearby merchants, and drivers with live order tracking.' },
   taltak: { company: 'Awamer Alshabaka (AAIT)', desc: 'Beauty services marketplace for discovering and booking photographers, makeup artists, and creative professionals across Saudi Arabia.' },
   ekceer: { company: 'Awamer Alshabaka (AAIT)', desc: 'Beauty and healthcare platform for discovering nearby clinics, comparing services and packages, and booking appointments.' },
+  share3: { company: '', desc: 'Location-based marketplace connecting users with nearby home maintenance, event, student, and general service providers.' },
   homemaint: { company: 'Awamer Alshabaka (AAIT)', desc: 'Digital home maintenance platform for instant and scheduled plumbing and electrical services with direct price negotiation.' },
   osr: { company: 'Awamer Alshabaka (AAIT)', desc: 'Three-app marketplace - customers order from productive families, providers manage offerings, drivers fulfill deliveries.' },
   muakad: { company: 'Awamer Alshabaka (AAIT)', desc: 'Healthcare platform with instant and scheduled consultations, real-time chat, video calls, and secure payments.' },
@@ -198,6 +205,7 @@ PORTFOLIO_I18N.ar.projCards = {
   eco: { company: '', desc: '\u0645\u0646\u0638\u0648\u0645\u0629 \u062a\u0648\u0635\u064a\u0644 \u0627\u0642\u062a\u0635\u0627\u062f\u064a\u0629 \u0630\u0643\u064a\u0629 \u062a\u0631\u0628\u0637 \u0627\u0644\u0639\u0645\u0644\u0627\u0621 \u0628\u0627\u0644\u0645\u062a\u0627\u062c\u0631 \u0627\u0644\u0642\u0631\u064a\u0628\u0629 \u0648\u0627\u0644\u0645\u0646\u062f\u0648\u0628\u064a\u0646 \u0645\u0639 \u062a\u062a\u0628\u0639 \u0645\u0628\u0627\u0634\u0631 \u0644\u0644\u0637\u0644\u0628.' },
   taltak: { company: 'أوامر الشبكة', desc: 'منصة لحجز المصورين وخبراء المكياج ومحترفي الجمال والإبداع في السعودية بسهولة وأمان.' },
   ekceer: { company: 'أوامر الشبكة', desc: 'منصة لاكتشاف عيادات الجمال والرعاية الصحية ومقارنة الخدمات والباقات وحجز المواعيد بسهولة.' },
+  share3: { company: '', desc: 'منصة تعتمد على الموقع لربط المستخدمين بأقرب مزودي خدمات الصيانة والمناسبات والخدمات العامة.' },
   homemaint: { company: '\u0623\u0648\u0627\u0645\u0631 \u0627\u0644\u0634\u0628\u0643\u0629', desc: '\u0645\u0646\u0635\u0629 \u0635\u064a\u0627\u0646\u0629 \u0645\u0646\u0632\u0644\u064a\u0629 \u0631\u0642\u0645\u064a\u0629 \u0644\u0644\u062e\u062f\u0645\u0627\u062a \u0627\u0644\u0641\u0648\u0631\u064a\u0629 \u0648\u0627\u0644\u0645\u062c\u062f\u0648\u0644\u0629 \u0641\u064a \u0627\u0644\u0633\u0628\u0627\u0643\u0629 \u0648\u0627\u0644\u0643\u0647\u0631\u0628\u0627\u0621 \u0645\u0639 \u062a\u0641\u0627\u0648\u0636 \u0645\u0628\u0627\u0634\u0631 \u0639\u0644\u0649 \u0627\u0644\u0623\u0633\u0639\u0627\u0631.' },
   osr: { company: '\u0623\u0648\u0627\u0645\u0631 \u0627\u0644\u0634\u0628\u0643\u0629', desc: '\u0645\u0646\u0638\u0648\u0645\u0629 \u0633\u0648\u0642 \u0645\u0646 3 \u062a\u0637\u0628\u064a\u0642\u0627\u062a - \u0639\u0645\u0644\u0627\u0621 \u0648\u0645\u0632\u0648\u062f\u0648\u0646 \u0648\u0633\u0627\u0626\u0642\u0648\u0646 \u0645\u0639 \u062a\u062a\u0628\u0639 \u0645\u0628\u0627\u0634\u0631.' },
   muakad: { company: '\u0623\u0648\u0627\u0645\u0631 \u0627\u0644\u0634\u0628\u0643\u0629', desc: '\u0645\u0646\u0635\u0629 \u0631\u0639\u0627\u064a\u0629 \u0635\u062d\u064a\u0629 \u0628\u0627\u0633\u062a\u0634\u0627\u0631\u0627\u062a \u0641\u0648\u0631\u064a\u0629 \u0648\u0645\u062c\u062f\u0648\u0644\u0629 \u0648\u062f\u0631\u062f\u0634\u0629 \u0648\u0641\u064a\u062f\u064a\u0648 \u0648\u0645\u062f\u0641\u0648\u0639\u0627\u062a \u0622\u0645\u0646\u0629.' },
@@ -222,7 +230,7 @@ PORTFOLIO_I18N.ar.expPanels = {
 PORTFOLIO_I18N.en.expNav = { aait2: 'Jan 2026 - Present', aait1: 'Apr 2023 - Jan 2026', nationtech: 'Dec 2022 - Mar 2023', algorezmi: 'Jan 2022 - Nov 2022' };
 PORTFOLIO_I18N.ar.expNav = { aait2: '\u064a\u0646\u0627\u064a\u0631 2026 - \u0627\u0644\u0622\u0646', aait1: '\u0623\u0628\u0631\u064a\u0644 2023 - \u064a\u0646\u0627\u064a\u0631 2026', nationtech: '\u062f\u064a\u0633\u0645\u0628\u0631 2022 - \u0645\u0627\u0631\u0633 2023', algorezmi: '\u064a\u0646\u0627\u064a\u0631 2022 - \u0646\u0648\u0641\u0645\u0628\u0631 2022' };
 
-const PROJ_LINK_KEYS = { homeexpress: ['user','provider'], eco: ['user','provider','driver'], taltak: ['appStore'], ekceer: ['appStore'], homemaint: ['user','provider'], aelm: ['student','teacher'], osr: ['user','provider','driver'], muakad: ['user','provider'], souqhouta: ['appStore'], laser: ['user','specialist'], mehanti: ['appStore'], globalm: ['appStore'] };
+const PROJ_LINK_KEYS = { homeexpress: ['user','provider'], eco: ['user','provider','driver'], taltak: ['appStore'], ekceer: ['appStore'], share3: ['appStore'], homemaint: ['user','provider'], aelm: ['student','teacher'], osr: ['user','provider','driver'], muakad: ['user','provider'], souqhouta: ['appStore'], laser: ['user','specialist'], mehanti: ['appStore'], globalm: ['appStore'] };
 
 const requestedPortfolioLang = new URLSearchParams(window.location.search).get('lang');
 let portfolioLang = requestedPortfolioLang === 'ar' || requestedPortfolioLang === 'en'
