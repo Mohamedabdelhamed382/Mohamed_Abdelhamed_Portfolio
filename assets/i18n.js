@@ -77,12 +77,20 @@ PORTFOLIO_I18N.ar.hero.role = 'مهندس iOS أول';
 PORTFOLIO_I18N.ar.hero.desc = 'مهندس iOS أول بخبرة تزيد عن 4 سنوات في بناء أكثر من 15 تطبيقًا إنتاجيًا يخدم أكثر من 60 ألف مستخدم في الرعاية الصحية والتقنية المالية والأسواق وبث الوسائط.';
 PORTFOLIO_I18N.ar.apps.homemaint.sub = 'خدمات منزلية';
 PORTFOLIO_I18N.ar.apps.osr.sub = 'سوق الأسر المنتجة';
-PORTFOLIO_I18N.en.apps.aelm = { title: 'Aelm', sub: 'Personalized Learning', tabs: ['App'] };
-PORTFOLIO_I18N.ar.apps.aelm = { title: 'علم', sub: 'تعليم شخصي مرن', tabs: ['التطبيق'] };
+PORTFOLIO_I18N.en.apps.aelm = { title: 'Aelm', sub: 'Personalized Learning', tabs: ['Student App', 'Teacher App'] };
+PORTFOLIO_I18N.ar.apps.aelm = { title: 'علم', sub: 'تعليم شخصي مرن', tabs: ['تطبيق الطلاب', 'تطبيق المعلمين'] };
+PORTFOLIO_I18N.en.projects.student = 'Student';
+PORTFOLIO_I18N.en.projects.teacher = 'Teacher';
+PORTFOLIO_I18N.ar.projects.student = 'طالب';
+PORTFOLIO_I18N.ar.projects.teacher = 'معلم';
 PORTFOLIO_I18N.ar.appDetails = {
   'story-aelm': {
     desc: ['<strong>علم</strong> منصة تعليمية تساعد الطلاب على الوصول إلى المعلم المناسب والحصول على تجربة تعليمية شخصية تلائم مستواهم واحتياجاتهم الدراسية.', 'سواء كنت تحتاج إلى شرح مادة، أو تقوية مستواك، أو متابعة دراسية منتظمة، أو الاستعداد للاختبارات، يساعدك علم على التعلم مع نخبة من المعلمين من أي مكان.'],
     features: ['البحث عن المعلم المناسب بسهولة', 'الاطلاع على معلومات المعلمين ومؤهلاتهم', 'اختيار المادة التي تحتاج إلى المساعدة فيها', 'متابعة طلباتك التعليمية من داخل التطبيق', 'الحصول على تعليم شخصي يناسب احتياجاتك ومستواك', 'التعلم أونلاين بمرونة وفي الوقت المناسب لك']
+  },
+  'story-aelm-teacher': {
+    desc: ['<strong>علم للمعلمين</strong> هو منصتك لتقديم خبرتك التعليمية والوصول إلى الطلاب الباحثين عن تعليم شخصي يناسب احتياجاتهم.', 'ركّز على التدريس، ودع التطبيق يساعدك على تنظيم المواعيد والحجوزات والمدفوعات.'],
+    features: ['تحديد المواد التي تناسب تخصصك ومهاراتك', 'إنشاء ملف مهني يوضح خبراتك ومؤهلاتك', 'اختيار أوقاتك وتنظيم جدولك بمرونة', 'استقبال طلبات الطلاب وإدارة الحجوزات', 'تقديم الدروس عبر مكالمات الفيديو أو الصوت داخل التطبيق', 'متابعة المدفوعات والتفاصيل المرتبطة بدروسك', 'الاطلاع على تقييمات الطلاب والعمل على تطوير تجربتك']
   },
   'story-osr-user': {
     desc: ['<strong>أسر</strong> منصة رقمية تمكّن الأسر المنتجة من عرض وبيع منتجاتها، وتمنح العملاء تجربة سهلة لاكتشاف المنتجات المحلية وطلبها واستلامها.', 'يمكن للعملاء تصفح المنتجات وإضافتها إلى السلة، واختيار التوصيل أو الاستلام الذاتي، والدفع بأمان عبر Moyasar.'],
@@ -135,7 +143,7 @@ PORTFOLIO_I18N.ar.appDetails = {
 };
 
 PORTFOLIO_I18N.en.projCards = {
-  aelm: { company: '', desc: 'Personalized learning platform connecting students with qualified teachers for flexible online lessons, academic support, and exam preparation.' },
+  aelm: { company: '', desc: 'Personalized learning ecosystem connecting students with qualified teachers for flexible lessons, bookings, and academic support.' },
   homemaint: { company: 'Awamer Alshabaka (AAIT)', desc: 'Digital home maintenance platform for instant and scheduled plumbing and electrical services with direct price negotiation.' },
   osr: { company: 'Awamer Alshabaka (AAIT)', desc: 'Three-app marketplace - customers order from productive families, providers manage offerings, drivers fulfill deliveries.' },
   muakad: { company: 'Awamer Alshabaka (AAIT)', desc: 'Healthcare platform with instant and scheduled consultations, real-time chat, video calls, and secure payments.' },
@@ -145,7 +153,7 @@ PORTFOLIO_I18N.en.projCards = {
   globalm: { company: 'Algorezmi', desc: 'Live media streaming platform for news and sports with low-latency SRT streaming using AVFoundation.' }
 };
 PORTFOLIO_I18N.ar.projCards = {
-  aelm: { company: '', desc: 'منصة تعليمية تساعد الطلاب على الوصول إلى المعلم المناسب والحصول على تجربة تعليمية شخصية تلائم مستواهم واحتياجاتهم الدراسية.' },
+  aelm: { company: '', desc: 'منظومة تعليمية تربط الطلاب بالمعلمين المناسبين للتعلم الشخصي المرن وإدارة الدروس والحجوزات.' },
   homemaint: { company: '\u0623\u0648\u0627\u0645\u0631 \u0627\u0644\u0634\u0628\u0643\u0629', desc: '\u0645\u0646\u0635\u0629 \u0635\u064a\u0627\u0646\u0629 \u0645\u0646\u0632\u0644\u064a\u0629 \u0631\u0642\u0645\u064a\u0629 \u0644\u0644\u062e\u062f\u0645\u0627\u062a \u0627\u0644\u0641\u0648\u0631\u064a\u0629 \u0648\u0627\u0644\u0645\u062c\u062f\u0648\u0644\u0629 \u0641\u064a \u0627\u0644\u0633\u0628\u0627\u0643\u0629 \u0648\u0627\u0644\u0643\u0647\u0631\u0628\u0627\u0621 \u0645\u0639 \u062a\u0641\u0627\u0648\u0636 \u0645\u0628\u0627\u0634\u0631 \u0639\u0644\u0649 \u0627\u0644\u0623\u0633\u0639\u0627\u0631.' },
   osr: { company: '\u0623\u0648\u0627\u0645\u0631 \u0627\u0644\u0634\u0628\u0643\u0629', desc: '\u0645\u0646\u0638\u0648\u0645\u0629 \u0633\u0648\u0642 \u0645\u0646 3 \u062a\u0637\u0628\u064a\u0642\u0627\u062a - \u0639\u0645\u0644\u0627\u0621 \u0648\u0645\u0632\u0648\u062f\u0648\u0646 \u0648\u0633\u0627\u0626\u0642\u0648\u0646 \u0645\u0639 \u062a\u062a\u0628\u0639 \u0645\u0628\u0627\u0634\u0631.' },
   muakad: { company: '\u0623\u0648\u0627\u0645\u0631 \u0627\u0644\u0634\u0628\u0643\u0629', desc: '\u0645\u0646\u0635\u0629 \u0631\u0639\u0627\u064a\u0629 \u0635\u062d\u064a\u0629 \u0628\u0627\u0633\u062a\u0634\u0627\u0631\u0627\u062a \u0641\u0648\u0631\u064a\u0629 \u0648\u0645\u062c\u062f\u0648\u0644\u0629 \u0648\u062f\u0631\u062f\u0634\u0629 \u0648\u0641\u064a\u062f\u064a\u0648 \u0648\u0645\u062f\u0641\u0648\u0639\u0627\u062a \u0622\u0645\u0646\u0629.' },
@@ -170,7 +178,7 @@ PORTFOLIO_I18N.ar.expPanels = {
 PORTFOLIO_I18N.en.expNav = { aait2: 'Jan 2026 - Present', aait1: 'Apr 2023 - Jan 2026', nationtech: 'Dec 2022 - Mar 2023', algorezmi: 'Jan 2022 - Nov 2022' };
 PORTFOLIO_I18N.ar.expNav = { aait2: '\u064a\u0646\u0627\u064a\u0631 2026 - \u0627\u0644\u0622\u0646', aait1: '\u0623\u0628\u0631\u064a\u0644 2023 - \u064a\u0646\u0627\u064a\u0631 2026', nationtech: '\u062f\u064a\u0633\u0645\u0628\u0631 2022 - \u0645\u0627\u0631\u0633 2023', algorezmi: '\u064a\u0646\u0627\u064a\u0631 2022 - \u0646\u0648\u0641\u0645\u0628\u0631 2022' };
 
-const PROJ_LINK_KEYS = { homemaint: ['user','provider'], aelm: ['appStore'], osr: ['user','provider','driver'], muakad: ['user','provider'], souqhouta: ['appStore'], laser: ['user','specialist'], mehanti: ['appStore'], globalm: ['appStore'] };
+const PROJ_LINK_KEYS = { homemaint: ['user','provider'], aelm: ['student','teacher'], osr: ['user','provider','driver'], muakad: ['user','provider'], souqhouta: ['appStore'], laser: ['user','specialist'], mehanti: ['appStore'], globalm: ['appStore'] };
 
 const requestedPortfolioLang = new URLSearchParams(window.location.search).get('lang');
 let portfolioLang = requestedPortfolioLang === 'ar' || requestedPortfolioLang === 'en'
