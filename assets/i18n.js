@@ -34,6 +34,7 @@ const PORTFOLIO_I18N = {
       torido: { title: 'Torido', sub: 'Light-Truck Transport Marketplace', tabs: ['Customer App', 'Carrier App'] },
       loh: { title: 'Last One Hour', sub: 'Deals & Discounts Marketplace', tabs: ['Customer App', 'Provider App'] },
       sarena: { title: 'Sarena', sub: 'Transport & Logistics', tabs: ['App'] },
+      researchassistant: { title: 'Research Assistant', sub: 'Academic Research Services', tabs: ['App'] },
       homemaint: { title: 'My Home Maintenance', sub: 'Home Services', tabs: ['User App', 'Provider App'] },
       osr: { title: 'OSR', sub: 'Productive Families Marketplace', tabs: ['User App', 'Provider App', 'Driver App'] },
       souqhouta: { title: 'Souq Al Houta', sub: '60K+ Users', tabs: ['App'] },
@@ -77,6 +78,7 @@ const PORTFOLIO_I18N = {
       torido: { title: 'توريدو', sub: 'سوق نقل الشاحنات الخفيفة', tabs: ['تطبيق العميل', 'تطبيق الناقل'] },
       loh: { title: 'آخر ساعة', sub: 'سوق العروض والخصومات', tabs: ['تطبيق العميل', 'تطبيق التاجر'] },
       sarena: { title: 'سرينا', sub: 'النقل والخدمات اللوجستية', tabs: ['التطبيق'] },
+      researchassistant: { title: 'مساعد البحث', sub: 'خدمات البحث الأكاديمي', tabs: ['التطبيق'] },
       homemaint: { title: '\u0635\u064a\u0627\u0646\u0629 \u0645\u0646\u0632\u0644\u064a', sub: '\u0623\u0648\u0627\u0645\u0631 \u0627\u0644\u0634\u0628\u0643\u0629', tabs: ['\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645', '\u0645\u0642\u062f\u0645 \u0627\u0644\u062e\u062f\u0645\u0629'] },
       osr: { title: '\u0623\u0633\u0631', sub: '\u0623\u0648\u0627\u0645\u0631 \u0627\u0644\u0634\u0628\u0643\u0629', tabs: ['\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645', '\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0645\u0632\u0648\u062f', '\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0633\u0627\u0626\u0642'] },
       souqhouta: { title: '\u0633\u0648\u0642 \u0627\u0644\u062d\u0648\u0637\u0629', sub: '60 \u0623\u0644\u0641+ \u0645\u0633\u062a\u062e\u062f\u0645', tabs: ['\u0627\u0644\u062a\u0637\u0628\u064a\u0642'] },
@@ -158,6 +160,10 @@ PORTFOLIO_I18N.ar.appDetails = {
     desc: ['<strong>سرينا</strong> منصة للنقل والخدمات اللوجستية صُممت لجعل طلب خدمات النقل وتنفيذها أسرع وأسهل وأكثر كفاءة.', 'يمكن للعميل طلب الخدمة ومتابعة الطلب لحظيًا والتواصل مع الكابتن واستقبال التنبيهات واختيار طريقة الدفع وتقييم الخدمة بعد اكتمالها.'],
     features: ['طلب خدمات النقل والتوصيل بسرعة', 'تتبع الطلبات الجارية لحظيًا', 'التواصل مع الكابتن أثناء التنفيذ', 'استقبال تنبيهات وتحديثات فورية', 'الاختيار بين طرق دفع متعددة', 'تقييم الخدمات المكتملة لتحسين الجودة', 'تجربة بسيطة لاحتياجات النقل اليومية']
   },
+  'story-researchassistant': {
+    desc: ['<strong>مساعد البحث (R.A)</strong> يقدم أكثر من 20 خدمة احترافية للباحثين وطلاب الدراسات العليا والمراكز العلمية.', 'توفر لجنة متخصصة من المستشارين دعمًا في العلوم الصحية والقانونية والطبيعية والهندسية والذكاء الاصطناعي بدقة وسرعة ونزاهة علمية وسرية تامة.'],
+    features: ['المساعدة في كتابة ونشر الأبحاث دوليًا', 'التحليل الإحصائي والتدقيق اللغوي', 'ترجمة علمية معتمدة وكشف الاقتباسات', 'استشارات أكاديمية لطلاب الماجستير والدكتوراه', 'دعم الإجازة الأخلاقية وIRB', 'تحكيم ومراجعة الأبحاث العلمية', 'تغطية تخصصات الصحة والقانون والهندسة والعلوم والذكاء الاصطناعي']
+  },
   'story-aelm': {
     desc: ['<strong>علم</strong> منصة تعليمية تساعد الطلاب على الوصول إلى المعلم المناسب والحصول على تجربة تعليمية شخصية تلائم مستواهم واحتياجاتهم الدراسية.', 'سواء كنت تحتاج إلى شرح مادة، أو تقوية مستواك، أو متابعة دراسية منتظمة، أو الاستعداد للاختبارات، يساعدك علم على التعلم مع نخبة من المعلمين من أي مكان.'],
     features: ['البحث عن المعلم المناسب بسهولة', 'الاطلاع على معلومات المعلمين ومؤهلاتهم', 'اختيار المادة التي تحتاج إلى المساعدة فيها', 'متابعة طلباتك التعليمية من داخل التطبيق', 'الحصول على تعليم شخصي يناسب احتياجاتك ومستواك', 'التعلم أونلاين بمرونة وفي الوقت المناسب لك']
@@ -227,6 +233,7 @@ PORTFOLIO_I18N.en.projCards = {
   torido: { company: '', desc: 'Two-app light-truck transport marketplace connecting customers and carriers through competitive quotations and easy fulfillment.' },
   loh: { company: '', desc: 'Two-app deals marketplace connecting shoppers with exclusive discounts and merchants with order and sales management.' },
   sarena: { company: 'Awamer Alshabaka (AAIT)', desc: 'Transport and logistics platform with fast requests, live tracking, captain interaction, flexible payments, and ratings.' },
+  researchassistant: { company: 'Awamer Alshabaka (AAIT)', desc: 'Academic services platform supporting research writing, publishing, statistics, translation, ethics, and postgraduate consultation.' },
   homemaint: { company: 'Awamer Alshabaka (AAIT)', desc: 'Digital home maintenance platform for instant and scheduled plumbing and electrical services with direct price negotiation.' },
   osr: { company: 'Awamer Alshabaka (AAIT)', desc: 'Three-app marketplace - customers order from productive families, providers manage offerings, drivers fulfill deliveries.' },
   muakad: { company: 'Awamer Alshabaka (AAIT)', desc: 'Healthcare platform with instant and scheduled consultations, real-time chat, video calls, and secure payments.' },
@@ -246,6 +253,7 @@ PORTFOLIO_I18N.ar.projCards = {
   torido: { company: '', desc: 'منظومة نقل من تطبيقين تربط العملاء بناقلي الشاحنات الخفيفة عبر تسعيرات متعددة وتنفيذ سهل للطلبات.' },
   loh: { company: '', desc: 'منظومة عروض من تطبيقين تربط المتسوقين بالخصومات الحصرية وتمنح التجار أدوات إدارة الطلبات والمبيعات.' },
   sarena: { company: 'أوامر الشبكة', desc: 'منصة للنقل والخدمات اللوجستية توفر طلبًا سريعًا وتتبعًا مباشرًا وتواصلًا مع الكابتن ودفعًا مرنًا.' },
+  researchassistant: { company: 'أوامر الشبكة', desc: 'منصة خدمات أكاديمية لدعم كتابة ونشر الأبحاث والتحليل والترجمة والأخلاقيات والاستشارات العليا.' },
   homemaint: { company: '\u0623\u0648\u0627\u0645\u0631 \u0627\u0644\u0634\u0628\u0643\u0629', desc: '\u0645\u0646\u0635\u0629 \u0635\u064a\u0627\u0646\u0629 \u0645\u0646\u0632\u0644\u064a\u0629 \u0631\u0642\u0645\u064a\u0629 \u0644\u0644\u062e\u062f\u0645\u0627\u062a \u0627\u0644\u0641\u0648\u0631\u064a\u0629 \u0648\u0627\u0644\u0645\u062c\u062f\u0648\u0644\u0629 \u0641\u064a \u0627\u0644\u0633\u0628\u0627\u0643\u0629 \u0648\u0627\u0644\u0643\u0647\u0631\u0628\u0627\u0621 \u0645\u0639 \u062a\u0641\u0627\u0648\u0636 \u0645\u0628\u0627\u0634\u0631 \u0639\u0644\u0649 \u0627\u0644\u0623\u0633\u0639\u0627\u0631.' },
   osr: { company: '\u0623\u0648\u0627\u0645\u0631 \u0627\u0644\u0634\u0628\u0643\u0629', desc: '\u0645\u0646\u0638\u0648\u0645\u0629 \u0633\u0648\u0642 \u0645\u0646 3 \u062a\u0637\u0628\u064a\u0642\u0627\u062a - \u0639\u0645\u0644\u0627\u0621 \u0648\u0645\u0632\u0648\u062f\u0648\u0646 \u0648\u0633\u0627\u0626\u0642\u0648\u0646 \u0645\u0639 \u062a\u062a\u0628\u0639 \u0645\u0628\u0627\u0634\u0631.' },
   muakad: { company: '\u0623\u0648\u0627\u0645\u0631 \u0627\u0644\u0634\u0628\u0643\u0629', desc: '\u0645\u0646\u0635\u0629 \u0631\u0639\u0627\u064a\u0629 \u0635\u062d\u064a\u0629 \u0628\u0627\u0633\u062a\u0634\u0627\u0631\u0627\u062a \u0641\u0648\u0631\u064a\u0629 \u0648\u0645\u062c\u062f\u0648\u0644\u0629 \u0648\u062f\u0631\u062f\u0634\u0629 \u0648\u0641\u064a\u062f\u064a\u0648 \u0648\u0645\u062f\u0641\u0648\u0639\u0627\u062a \u0622\u0645\u0646\u0629.' },
@@ -270,7 +278,7 @@ PORTFOLIO_I18N.ar.expPanels = {
 PORTFOLIO_I18N.en.expNav = { aait2: 'Jan 2026 - Present', aait1: 'Apr 2023 - Jan 2026', nationtech: 'Dec 2022 - Mar 2023', algorezmi: 'Jan 2022 - Nov 2022' };
 PORTFOLIO_I18N.ar.expNav = { aait2: '\u064a\u0646\u0627\u064a\u0631 2026 - \u0627\u0644\u0622\u0646', aait1: '\u0623\u0628\u0631\u064a\u0644 2023 - \u064a\u0646\u0627\u064a\u0631 2026', nationtech: '\u062f\u064a\u0633\u0645\u0628\u0631 2022 - \u0645\u0627\u0631\u0633 2023', algorezmi: '\u064a\u0646\u0627\u064a\u0631 2022 - \u0646\u0648\u0641\u0645\u0628\u0631 2022' };
 
-const PROJ_LINK_KEYS = { homeexpress: ['user','provider'], eco: ['user','provider','driver'], taltak: ['appStore'], ekceer: ['appStore'], share3: ['appStore'], alkharashi: ['appStore'], torido: ['user','carrier'], loh: ['user','provider'], sarena: ['appStore'], homemaint: ['user','provider'], aelm: ['student','teacher'], osr: ['user','provider','driver'], muakad: ['user','provider'], souqhouta: ['appStore'], laser: ['user','specialist'], mehanti: ['appStore'], globalm: ['appStore'] };
+const PROJ_LINK_KEYS = { homeexpress: ['user','provider'], eco: ['user','provider','driver'], taltak: ['appStore'], ekceer: ['appStore'], share3: ['appStore'], alkharashi: ['appStore'], torido: ['user','carrier'], loh: ['user','provider'], sarena: ['appStore'], researchassistant: ['appStore'], homemaint: ['user','provider'], aelm: ['student','teacher'], osr: ['user','provider','driver'], muakad: ['user','provider'], souqhouta: ['appStore'], laser: ['user','specialist'], mehanti: ['appStore'], globalm: ['appStore'] };
 
 const requestedPortfolioLang = new URLSearchParams(window.location.search).get('lang');
 let portfolioLang = requestedPortfolioLang === 'ar' || requestedPortfolioLang === 'en'
