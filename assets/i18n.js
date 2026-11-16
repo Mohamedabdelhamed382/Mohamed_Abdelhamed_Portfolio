@@ -1,4 +1,4 @@
-/* Portfolio i18n - EN / AR */
+/* Portfolio content - English only */
 const PORTFOLIO_I18N = {
   en: {
     meta: { title: 'Mohamed AbdElhamed - Senior iOS Engineer', description: 'Senior iOS Engineer with 4+ years of experience building 15+ production apps serving 60K+ users. Swift, SwiftUI, UIKit, and scalable mobile architecture.' },
@@ -288,21 +288,13 @@ PORTFOLIO_I18N.ar.expNav = { aait2: '\u064a\u0646\u0627\u064a\u0631 2026 - \u062
 
 const PROJ_LINK_KEYS = { homeexpress: ['user','provider'], eco: ['user','provider','driver'], taltak: ['appStore'], ekceer: ['appStore'], share3: ['appStore'], alkharashi: ['appStore'], torido: ['user','carrier'], loh: ['user','provider'], sarena: ['appStore'], researchassistant: ['appStore'], mostasharak: ['appStore'], homemaint: ['user','provider'], aelm: ['student','teacher'], osr: ['user','provider','driver'], muakad: ['user','provider'], souqhouta: ['appStore'], laser: ['user','specialist'], mehanti: ['appStore'], globalm: ['appStore'] };
 
-const requestedPortfolioLang = new URLSearchParams(window.location.search).get('lang');
-let portfolioLang = requestedPortfolioLang === 'ar' || requestedPortfolioLang === 'en'
-  ? requestedPortfolioLang
-  : (localStorage.getItem('portfolio-lang') || 'ar');
+let portfolioLang = 'en';
 
 function setPortfolioLang(lang) {
-  portfolioLang = lang;
-  localStorage.setItem('portfolio-lang', lang);
-  document.documentElement.lang = lang;
-  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-  applyPortfolioI18n(lang);
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.lang === lang);
-    btn.setAttribute('aria-pressed', btn.dataset.lang === lang);
-  });
+  portfolioLang = 'en';
+  document.documentElement.lang = 'en';
+  document.documentElement.dir = 'ltr';
+  applyPortfolioI18n('en');
 }
 
 function applyPortfolioI18n(lang) {
@@ -415,8 +407,5 @@ function applyPortfolioI18n(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  setPortfolioLang(portfolioLang);
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => setPortfolioLang(btn.dataset.lang));
-  });
+  setPortfolioLang('en');
 });
